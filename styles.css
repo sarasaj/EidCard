@@ -106,8 +106,8 @@ html,body
 	margin: auto;
 }
 .bg {
-	width:100px;
-	height: 100px;
+	width:20%;
+	height: auto;
 }
 #backgrounds {
 	display: inline-block;
@@ -116,6 +116,7 @@ html,body
 .tabs {
 width:100%;
 display:inline-block;
+margin-bottom: 5%;
 }
 /*----- Tab Links -----*/
 /* Clearfix */
@@ -150,7 +151,7 @@ color:white;
 }
 /*----- Content of Tabs -----*/
 .tab-content {
-padding:15px;
+padding:5%;
 border-radius:3px;
 border: 1px solid #1985A1;
 box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
@@ -159,6 +160,8 @@ margin-left: 10px;
 }
 .tab {
 display:none;
+width: 100%;
+margin: 0 auto;
 }
 .tab.active {
 display:block;
