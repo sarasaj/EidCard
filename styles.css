@@ -5,6 +5,9 @@
        height: 350px !important;
     }
 		.tab-links a {
+      .tab-links a {
+  			font-size: 3.5vw;
+  		}
 			font-size: 3.5vw;
 		}
 		#logo {
@@ -20,6 +23,9 @@
        width: 400px !important;
        height: 400px !important;
     }
+    .tab-links a {
+			font-size: 3.5vw;
+		}
 		#logo {
 			width: 25%;
 			height: auto;
@@ -159,5 +165,7 @@ display:block;
 }
 
 #text_color {
-  -webkit-text-fill-color:#880000;
+  -webkit-text-fill-color: rgba(0, 0, 0, 1);
+  -webkit-opacity: 1;
+  background: white;
 }
