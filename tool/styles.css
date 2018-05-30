@@ -1,48 +1,82 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Changa|El+Messiri|Lalezar|Pacifico|Tajawal|Lemonada');
-
-#logo {
-	width: 15%;
+@media only screen and (max-width: 375px) {
+    .canvas-container canvas {
+       width: 350px !important;
+       height: 350px !important;
+    }
+		.tab-links a {
+			font-size: 3.5vw;
+		}
+		#logo {
+			width: 25%;
+			height: auto;
+		}
+		#title {
+			font-size: 4vw;
+		}
+}
+@media only screen and (min-width : 376px) and (max-width : 769px){
+    .canvas-container canvas {
+       width: 400px !important;
+       height: 400px !important;
+    }
+		#logo {
+			width: 25%;
+			height: auto;
+		}
+		#title {
+			font-size: 4vw;
+		}
+}
+@media only screen and (min-width : 765px){
+	.tab-links a {
+		font-size: 1.3vw;
+	}
+	#logo {
+		width: 15%;
+		height: auto;
+	}
+	#title {
+		font-size: 2vw;
+	}
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.editingArea {
+	background-color: #1B1B1E;
+	/* padding-top: 3%;
+	padding-right: 3%; */
+	color: white;
+}
+#canvas-container {
+	background-color: #ebeced;
+	padding: 3%;
 	height: auto;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
 
-}    
+.header {
+	background-color:#58A4B0;
+
+}
+#logo {
+	float: right;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
 #title {
 	font-family: 'Changa', sans-serif;
-	font-size: 2em;
-	text-align: center;
-}
-.pageBody {
-	background-color: #ABC8D1;
-	margin-top: 3%;
-	width: 100%;
-	height: 100%;
-
-}
-.cardApp {
-	background-color: white;
-	padding: 1%;
-	width: 70%;
-	height: auto;
-    margin: 3% auto;
-    position: relative;
-}
-
-a, a:link, a:visited {
-	margin-top: 0.7%;
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-a:hover, a:active {
-    background-color: black;
-    color: white;
+	text-align: right;
+	color: white;
+	float: right;
+	margin-top: 4%;
+	margin-right: 1%;
+	margin-bottom: 4%;
 }
 
 [draggable] {
@@ -56,13 +90,14 @@ a:hover, a:active {
     cursor: move;
 }
 .typo {
-	width:100px;
-	height: 100px;
+	width:20%;
+	height: auto;
 	border: 1px solid grey;
 }
 #images {
-	background-color: black;
-	width: 600px;
+	background-color: #1B1B1E;
+	width: 100%;
+	margin: auto;
 }
 .bg {
 	width:100px;
@@ -70,4 +105,55 @@ a:hover, a:active {
 }
 #backgrounds {
 	display: inline-block;
+}
+/*----- Tabs -----*/
+.tabs {
+width:100%;
+display:inline-block;
+}
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+display:block;
+clear:both;
+content:'';
+}
+.tab-links li {
+margin:0px 0px;
+float:right;
+list-style:none;
+}
+.tab-links a {
+padding:10px 10px;
+display:inline-block;
+border-radius:3px 3px 0px 0px;
+background:#1B1B1E;
+font-family: 'Changa', sans-serif;
+font-weight:600;
+color:#C5C3C6;
+transition:all linear 0.15s;
+}
+.tab-links a:hover {
+background:#58A4B0;
+text-decoration:none;
+color white
+}
+li.active a, li.active a:hover {
+background:#58A4B0;
+color:white;
+}
+/*----- Content of Tabs -----*/
+.tab-content {
+padding:15px;
+border-radius:3px;
+border: 1px solid #1985A1;
+box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+background:#1B1B1E;
+margin-left: 10px;
+}
+.tab {
+display:none;
+}
+.tab.active {
+display:block;
 }

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- fabrix JS-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		  crossorigin="anonymous"></script>
 
 		<!-- CSS and JS file -->
 		<link rel="stylesheet" href="styles.css">
@@ -21,103 +19,120 @@
 	<div class="container-fluid">
 		<!--1st row -->
 		<div class="row">
-			<div class="header col-md-12 col-xs-12">
-				<img class="img-responsive" src="شعار العمادة.png" id="logo" alt="logoå">
+			<div class="header col-md-12 col-sm-12 col-xs-12">
+				<img class="img-responsive" src="eid designs/Elearn_logo/elearn_logo.png" id="logo" alt="logo">
 				<div id="title">
 					نظام إنشاء التهاني الإلكترونية
 				</div>
 			</div>
 		</div>
-
 		<!--2nd row -->
-		<div class="row justify-content-center">
-			<div class="col-md-12 pageBody">
-				<div class="cardApp col-md-12">
-					<div class="col-md-6 box" id="canvas-container">
-						<!-- <img src="4285.jpg" class="img-responsive cardArea"> -->
-						<canvas id="c" style="border:1px solid black;" width="500" height="500" ></canvas>
+		<div class="row">
+					<div class="col-sm-12 col-md-7 box" id="canvas-container">
+							<canvas id="c" style="border:1px solid black;" ></canvas>
 					</div>
-					<div class="col-md-6 editingArea">
-						<!-- eid typograpgy to drag and drop -->
-						<div id="images">
-				
-						</div>
-						<!-- change background -->
-						<div id="backgrounds">
-							
-						</div>
-						<!-- add image by user -->
-						<input type="file" name="" id="span">
-						<!-- delete active object -->
-						<button onclick="deleteObj()">delete</button>
-						<!-- add text to canvas -->
-						 <button onclick="Addtext()">Add Texto</button>
-						<!-- save png and download -->
-						<button id="savepng">Save as PNG</button>
-						<!-- <select id="font-family"></select> -->
-						<!-- text editing -->
-						<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
-					    <div id="text-controls">
-					    	<!-- color -->
-						  <input type="color" value="#FFFFFF" id="text-color" size="10">
-						  <!-- bg color -->
-					      <div>
-					        <label for="text-bg-color">Background color:</label>
-					        <input type="color" value="#FFFFFF" id="text-bg-color" size="10">
-					      </div>
-							<!-- font family -->
-					      <label for="font-family" style="display:inline-block">Font family:</label>
-					      <select id="font-family">
-					        <option value="arial">Arial</option>
-					        <option value="helvetica" selected>Helvetica</option>
-					        <option value="myriad pro">Myriad Pro</option>
-					        <option value="delicious">Delicious</option>
-					        <option value="verdana">Verdana</option>
-					        <option value="georgia">Georgia</option>
-					        <option value="courier">Courier</option>
-					        <option value="comic sans ms">Comic Sans MS</option>
-					        <option value="impact">Impact</option>
-					        <option value="monaco">Monaco</option>
-					        <option value="optima">Optima</option>
-					        <option value="hoefler text">Hoefler Text</option>
-					        <option value="plaster">Plaster</option>
-					        <option value="engagement">Engagement</option>
-					      </select>
-					      <br>
-					      <div>
-					        <label for="text-font-size">Font size:</label>
-					        <input type="range" value="#FFFFFF" min="1" max="120" step="1" id="text-font-size">
-					      </div>
-					    	<!-- text align -->
-					      <label for="text-align" style="display:inline-block">Text align:</label>
-					      <select id="text-align">
-					        <option value="left">Left</option>
-					        <option value="center">Center</option>
-					        <option value="right">Right</option>
-					        <option value="justify">Justify</option>
-					      </select>
 
-					    </div> <!-- END OF TEXT CONTROLS DIV -->
+					<div class="col-sm-12 col-md-5 editingArea">
+						<div class="tabs">
+							<ul class="tab-links">
+								<li class="active"><a href="#tab1">طوابع تهنئة</a></li>
+								<li><a href="#tab2">خلفيات</a></li>
+								<li><a href="#tab3">تنسيق النص</a></li>
+								<li><a href="#tab4">تحميل</a></li>
+							</ul>
 
-					    <div id="text-controls-additional">
-					      <input type='checkbox' name='fonttype' id="text-cmd-bold">
-					        Bold
-					    
-					      <input type='checkbox' name='fonttype' id="text-cmd-italic">
-					        Italic
-					      
-					    </div>
-					</div>
+							<div class="tab-content">
+								<div id="tab1" class="tab active">
+									<!-- eid typograpgy to drag and drop -->
+									<div id="images">
+
+									</div>
+								</div>
+
+								<div id="tab2" class="tab">
+									<!-- add bg by user -->
+									<input type="file" name="" id="span">
+									<!-- delete active object -->
+									<button onclick="deleteObj()">delete</button>
+									<!-- change background -->
+									<div id="backgrounds">
+									</div>
+								</div>
+
+								<div id="tab3" class="tab">
+										<!-- add text to canvas -->
+										 <button onclick="Addtext()">إضافة نص</button>
+										 <!-- text editing -->
+										<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
+											<div id="text-controls">
+												<!-- color -->
+												<label for="text-bg-color">لون الخط :</label>
+												<input type="color" value="#FFFFFF" id="text-color" size="10">
+												<!-- bg color -->
+												<div>
+													<label for="text-bg-color">Background color:</label>
+													<input type="color" value="#FFFFFF" id="text-bg-color" size="10">
+												</div>
+											<!-- font family -->
+												<label for="font-family" style="display:inline-block">Font family:</label>
+												<select id="font-family">
+													<option value="arial">Arial</option>
+													<!-- <option value="helvetica" selected>Helvetica</option>
+													<option value="myriad pro">Myriad Pro</option>
+													<option value="delicious">Delicious</option>
+													<option value="verdana">Verdana</option>
+													<option value="georgia">Georgia</option>
+													<option value="courier">Courier</option>
+													<option value="comic sans ms">Comic Sans MS</option>
+													<option value="impact">Impact</option>
+													<option value="monaco">Monaco</option>
+													<option value="optima">Optima</option>
+													<option value="hoefler text">Hoefler Text</option>
+													<option value="plaster">Plaster</option>
+													<option value="engagement">Engagement</option> -->
+												</select>
+												<br>
+												<div>
+													<label for="text-font-size">Font size:</label>
+													<input type="range" value="#FFFFFF" min="1" max="120" step="1" id="text-font-size">
+												</div>
+												<!-- text align -->
+												<label for="text-align" style="display:inline-block">Text align:</label>
+												<select id="text-align">
+													<option value="left">Left</option>
+													<option value="center">Center</option>
+													<option value="right">Right</option>
+													<option value="justify">Justify</option>
+												</select>
+
+											</div> <!-- END OF TEXT CONTROLS DIV -->
+
+											<div id="text-controls-additional">
+												<input type='checkbox' name='fonttype' id="text-cmd-bold">
+													Bold
+
+												<input type='checkbox' name='fonttype' id="text-cmd-italic">
+													Italic
+
+											</div>
+									</div>
+								</div>
+								<div id="tab4" class="tab">
+									<div class="downloadTap">
+
+									</div>
+									<!-- save png and download -->
+									<button id="savepng">Save as PNG</button>
+								</div>
+							</div>
+						</div>
 				</div>
-			</div>
-		</div>
 	</div>
 	</body>
-			
+
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

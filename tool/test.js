@@ -9,6 +9,8 @@ var fonts = ["Changa", "El Messiri", "Lalezar", "Lemonada" , "Amiri" , "Cairo" ,
 //text align
 var align = ["left", "center", "right" , "justify"];
 var el = document.getElementById('res');
+// Populate the fontFamily select
+var select = document.getElementById("font-family");
 //append typography to images div for drag and drop
 for (var i = 1; i <= 25; i++) {
   $('#images').append('<img draggable="true" src="eid designs/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
@@ -19,17 +21,48 @@ for (var i = 1; i <= 16; i++) {
 }
 
 fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
- var img1 = myImg.set({ 
+ var img1 = myImg.set({
   left: 0, top: 0 ,width:500,height:500,
   lockMovementX:true,
   lockMovementY:true,
  });
- canvas.add(img1); 
+ canvas.add(img1);
 });
-
+box = new fabric.IText('..اكتب إسمك هنا', {
+      left: 160,
+      top: 430,
+      fontFamily: 'arial black',
+      fill: '#ffffff',
+      fontSize: 30,
+      textAlign: 'center'
+});
+canvas.add(box).setActiveObject(box);
 fonts.unshift('Times New Roman');
-// Populate the fontFamily select
-var select = document.getElementById("font-family");
+// Apply selected font on change
+document.getElementById('font-family').onchange = function() {
+  if (this.value !== 'Times New Roman') {
+    loadAndUse(this.value);
+  } else {
+    canvas.getActiveObject().set("fontFamily", this.value);
+    canvas.requestRenderAll();
+  }
+};
+// load fonts for text box
+
+function loadAndUse(font) {
+  var myfont = new FontFaceObserver(font)
+  myfont.load()
+    .then(function() {
+      // when font is loaded, use it.
+      var active = canvas.getActiveObject();
+      active.set("fontFamily", font);
+      canvas.requestRenderAll();
+      active.bringToFront();
+      console.log("font added");
+    }).catch(function(e) {
+      console.log(e)
+          });
+}
 fonts.forEach(function(font) {
   loadAndUse(font);
   var option = document.createElement('option');
@@ -37,34 +70,11 @@ fonts.forEach(function(font) {
   option.value = font;
   select.appendChild(option);
 });
-
-// Apply selected font on change
-document.getElementById('font-family').onchange = function() {
-  if (this.value !== 'Times New Roman') {
-    // loadAndUse(this.value);
-  } else {
-    canvas.getActiveObject().set("fontFamily", this.value);
-    canvas.requestRenderAll();
-  }
-};
-// load fonts for text box
-function loadAndUse(font) {
-  var myfont = new FontFaceObserver(font)
-  myfont.load()
-    .then(function() {
-      // when font is loaded, use it.
-      canvas.getActiveObject().set("fontFamily", font);
-      canvas.requestRenderAll();
-      console.log("fonts added");
-    }).catch(function(e) {
-      console.log(e)
-          });
-}
 //editing tools
-function Addtext() { 
-box = new fabric.IText('tap and type', { 
-      left: 130,
-      top: 390,
+function Addtext() {
+box = new fabric.IText('..اكتب إسمك هنا', {
+      left: 150,
+      top: 400,
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
@@ -73,7 +83,7 @@ box = new fabric.IText('tap and type', {
 canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
 }
-//coloring     
+//coloring
 document.getElementById('text-color').onchange = function() {
       box.set({fill: this.value});
       canvas.renderAll();
@@ -83,7 +93,7 @@ document.getElementById('font-family').onchange = function() {
     box.set({fontFamily: this.value});
     canvas.renderAll();
     };
-//size    
+//size
 document.getElementById('text-font-size').onchange = function() {
     box.set({fontSize: this.value});
     canvas.renderAll();
@@ -96,7 +106,7 @@ document.getElementById('text-bg-color').onchange = function() {
 document.getElementById('text-cmd-bold').onclick = function() {
     box.set({fontWeight : "bold"});
     canvas.renderAll();
-    }; 
+    };
 document.getElementById('text-cmd-italic').onclick = function() {
     box.set({fontStyle : "italic"});
     canvas.renderAll();
@@ -116,7 +126,7 @@ $(document).on("click", "#savepng", function() {
   }
   img.src = canvas.toDataURL();
   img.src.download = "mypainting1";
-  
+
 });
 // download png
 var link = document.createElement('a');
@@ -125,7 +135,7 @@ link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "mypainting.png";
 }, false);
-$(".editingArea").prepend(link);
+$(".downloadTap").append(link);
 
 //drag and drop
 function handleDragStart(e) {
@@ -216,11 +226,11 @@ function addImage(imgLink) {
         img.set({ 'top': 50 });
         img.scaleToWidth(100);
         img.scaleToHeight(100);
-        
+
         var objs = canvas.getObjects();
         if (objs.length) {
             objs.forEach(function(e) {
-                if (e && e.type === 'image' & e._element.width == 500) {
+                if (e && e.type === 'image' & e.width >= 350) {
                     e._element.src = imgLink;
                     canvas.renderAll();
                 }
@@ -247,21 +257,17 @@ function changeIt(img) {
 current = 0
 currentimg = ""
 function addTypo(img) {
+
   if(current > 0){
     var activeObj = canvas.getActiveObject();
-    console.log(current);
-
     canvas.getObjects().forEach(function (targ) {
-      console.log(targ.isType('image'));
       if(targ.isType('image')& targ.width == 341){
-
-        
         console.log(targ);
         canvas.remove(targ);
       }
     });
   }
-  
+
   var newImage = new fabric.Image(img, {
         width: 341,
         height: 341,
@@ -271,3 +277,17 @@ function addTypo(img) {
     canvas.add(newImage).setActiveObject(newImage);
     current++;
 }
+
+jQuery(document).ready(function() {
+  jQuery('.tabs .tab-links a').on('click', function(e) {
+    var currentAttrValue = jQuery(this).attr('href');
+    // Show/Hide Tabs
+    jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+    // Change/remove current tab to active
+    jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+    e.preventDefault();
+
+    // Show/Hide Tabs
+    jQuery('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
+  });
+});
