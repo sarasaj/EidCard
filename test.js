@@ -84,10 +84,11 @@ canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
 }
 //coloring
-document.getElementById('text-color').onchange = function() {
-      box.set({fill: this.value});
+document.getElementById('jstextcolor').onchange = function() {
+      box.set({fill: "#"+this.value});
       canvas.renderAll();
       };
+
 //font family
 document.getElementById('font-family').onchange = function() {
     box.set({fontFamily: this.value});
@@ -98,11 +99,10 @@ document.getElementById('text-font-size').onchange = function() {
     box.set({fontSize: this.value});
     canvas.renderAll();
     };
-
-document.getElementById('text-bg-color').onchange = function() {
-    box.set({backgroundColor: this.value});
-    canvas.renderAll();
-    };
+document.getElementById('jstextbgcolor').onchange = function() {
+      box.set({backgroundColor: "#"+this.value});
+      canvas.renderAll();
+      };
 document.getElementById('text-cmd-bold').onclick = function() {
     box.set({fontWeight : "bold"});
     canvas.renderAll();
