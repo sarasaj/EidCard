@@ -34,7 +34,7 @@ box = new fabric.IText('..اكتب إسمك هنا', {
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
-      textAlign: 'center'
+      textAlign: 'right'
 });
 canvas.add(box).setActiveObject(box);
 fonts.unshift('Times New Roman');
