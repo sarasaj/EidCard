@@ -157,3 +157,7 @@ display:none;
 .tab.active {
 display:block;
 }
+
+#text_color {
+  -webkit-text-fill-color:#880000;
+}
