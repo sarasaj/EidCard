@@ -84,7 +84,7 @@ canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
 }
 //coloring
-document.getElementById('jstextcolor').onchange = function() {
+document.getElementById('jstextcolor').onclick = function() {
       box.set({fill: "#"+this.value});
       canvas.renderAll();
       };
@@ -99,7 +99,7 @@ document.getElementById('text-font-size').onchange = function() {
     box.set({fontSize: this.value});
     canvas.renderAll();
     };
-document.getElementById('jstextbgcolor').onchange = function() {
+document.getElementById('jstextbgcolor').onclick = function() {
       box.set({backgroundColor: "#"+this.value});
       canvas.renderAll();
       };
