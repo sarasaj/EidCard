@@ -253,3 +253,12 @@ input[type="range"]::-webkit-slider-thumb {
   width: 60%;
   margin: 0 auto;
 }
+#download, #savepng {
+  font-family: 'Changa', sans-serif;
+  width: 40%;
+  margin: 3%;
+}
+.downloadTap {
+  width: 80%;
+  margin: 0 auto;
+}

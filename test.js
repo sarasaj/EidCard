@@ -141,7 +141,7 @@ $(document).on("click", "#savepng", function() {
 });
 // download png
 var link = document.createElement('a');
-    link.innerHTML = 'download image';
+    link.innerHTML = '<a href="#" class="btn btn-danger btn-md" id="download"><i class="fas fa-download"></i> تحميل الصورة</a>';
 link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "mypainting.png";
