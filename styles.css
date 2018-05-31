@@ -22,7 +22,7 @@
        height: 400px !important;
     }
     .tab-links a {
-			font-size: 3.5vw;
+			font-size: 3vw;
 		}
 		#logo {
 			width: 25%;
@@ -250,12 +250,11 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
 }
 #alining {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
 }
 #download, #savepng {
   font-family: 'Changa', sans-serif;
-  width: 40%;
   margin: 3%;
 }
 .downloadTap {
