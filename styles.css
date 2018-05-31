@@ -2,12 +2,15 @@
 @media only screen and (max-width: 399px) {
     .canvas-container canvas {
        width: 350px !important;
-       height: 350px !important;
+       height: auto !important;
+    }
+    #canvas-container{
+      width: auto !important;
+      height: 370px !important;
     }
 		.tab-links a {
   			font-size: 0.85em !important;
   		}
-		}
 		#logo {
 			width: 25%;
 			height: auto;
@@ -20,6 +23,10 @@
     .canvas-container canvas {
        width: 390px !important;
        height: 390px !important;
+    }
+    .canvas-container {
+       width: auto !important;
+       height: 400px !important;
     }
     .tab-links a {
 			font-size: 2.5vw;
@@ -61,7 +68,6 @@ html,body
 #canvas-container {
 	background-color: #ebeced;
 	padding: 3%;
-	height: auto;
 }
 
 .header {
