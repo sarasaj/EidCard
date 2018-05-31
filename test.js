@@ -103,20 +103,31 @@ document.getElementById('jstextbgcolor').onchange = function() {
       box.set({backgroundColor: "#"+this.value});
       canvas.renderAll();
       };
-document.getElementById('text-cmd-bold').onclick = function() {
+document.getElementById('bold').onclick = function() {
     box.set({fontWeight : "bold"});
     canvas.renderAll();
     };
-document.getElementById('text-cmd-italic').onclick = function() {
+document.getElementById('italic').onclick = function() {
     box.set({fontStyle : "italic"});
     canvas.renderAll();
     };
 //align
-document.getElementById('text-align').onchange = function() {
-    box.set({textAlign : this.value});
+document.getElementById('justify').onclick = function() {
+    box.set({textAlign : "justify"});
     canvas.renderAll();
     };
-
+document.getElementById('center').onclick = function() {
+  box.set({textAlign : "center"});
+  canvas.renderAll();
+};
+document.getElementById('left').onclick = function() {
+  box.set({textAlign : "left"});
+  canvas.renderAll();
+};
+document.getElementById('right').onclick = function() {
+  box.set({textAlign : "right"});
+  canvas.renderAll();
+};
 // save png
 $(document).on("click", "#savepng", function() {
   var newTab = window.open();

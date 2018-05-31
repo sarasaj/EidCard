@@ -7,6 +7,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
 		<script src="jscolor.js"></script>
 		<!-- CSS and JS file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link rel="stylesheet" href="styles.css">
 
 
@@ -52,8 +53,7 @@
 								<div id="tab2" class="tab">
 									<!-- add bg by user -->
 									<input type="file" name="" id="span">
-									<!-- delete active object -->
-									<button id="delete" onclick="deleteObj()">حذف</button>
+
 									<!-- change background -->
 									<div id="backgrounds">
 									</div>
@@ -61,7 +61,19 @@
 
 								<div id="tab3" class="tab">
 										<!-- add text to canvas -->
-										 <button onclick="Addtext()">إضافة نص</button>
+										 <button id="addtext" onclick="Addtext()">إضافة نص</button>
+										 <!-- delete active object -->
+	 									<button id="delete" onclick="deleteObj()">حذف</button>
+										<!-- text align -->
+										<div id="alining">
+											<a href="#" class="btn btn-info btn-md" id="justify"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="center"><i class="fa fa-align-center" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="right"><i class="fa fa-align-right" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="left"><i class="fa fa-align-left" aria-hidden="true"></i></a>
+
+											<a href="#" class="btn btn-info btn-md" id="bold"><i class="fas fa-bold"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="italic"><i class="fas fa-italic"></i></a>
+										</div>
 										 <!-- text editing -->
 										<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
 											<div id="text-controls">
@@ -108,24 +120,7 @@
 
 												</div>
 												<br>
-												<!-- text align -->
-												<select id="text-align">
-													<option value="left">Left</option>
-													<option value="center">Center</option>
-													<option value="right">Right</option>
-													<option value="justify">Justify</option>
-												</select>
-												<label for="text-align" style="display:inline-block">اتجاه الخط</label>
 											</div> <!-- END OF TEXT CONTROLS DIV -->
-
-											<div id="text-controls-additional">
-												<input type='checkbox' name='fonttype' id="text-cmd-bold">
-													Bold
-
-												<input type='checkbox' name='fonttype' id="text-cmd-italic">
-													Italic
-
-											</div>
 									</div>
 								</div>
 								<div id="tab4" class="tab">
@@ -147,6 +142,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
 	<script src="test.js"></script>
 </html>
