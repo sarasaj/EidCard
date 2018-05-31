@@ -111,7 +111,9 @@ html,body
 }
 #backgrounds {
 	display: inline-block;
+  /* border: 1px solid white; */
 }
+
 /*----- Tabs -----*/
 .tabs {
 width:100%;
@@ -171,4 +173,13 @@ display:block;
   -webkit-text-fill-color: rgba(0, 0, 0, 1);
   -webkit-opacity: 1;
   background: white;
+}
+input[type=file] {
+    background-color: #1985A1;
+    border: none;
+    color: white;
+    width: 75%;
+    text-decoration: none;
+    margin: 2%;
+    cursor: pointer;
 }
