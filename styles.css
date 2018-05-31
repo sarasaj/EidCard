@@ -5,10 +5,8 @@
        height: 350px !important;
     }
 		.tab-links a {
-      .tab-links a {
-  			font-size: 3.5vw;
+  			font-size: 0.85em !important;
   		}
-			font-size: 3.5vw;
 		}
 		#logo {
 			width: 25%;
@@ -153,7 +151,7 @@ color:white;
 }
 /*----- Content of Tabs -----*/
 .tab-content {
-padding:5%;
+padding:3%;
 border-radius:3px;
 border: 1px solid #1985A1;
 box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
@@ -180,6 +178,74 @@ input[type=file] {
     color: white;
     width: 75%;
     text-decoration: none;
-    margin: 2%;
     cursor: pointer;
+    width: 75%;
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#delete {
+  background-color: #1985A1;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-family: 'Changa', sans-serif;
+  width: 75%;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+label {
+  text-align: right;
+  font-family: 'Changa', sans-serif;
+}
+#tab3 {
+  text-align: right;
+}
+/* style (slider) input type range*/
+@import url(https://fonts.googleapis.com/css?family=Dosis:700);
+
+.value {
+  display: inline-block;
+  border-bottom: 4px dashed #bdc3c7;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  width: 10%;
+  height: auto;
+}
+input[type="range"] {
+  display: inline-block;
+  -webkit-appearance: none;
+  background-color: #ebeced;
+  width: 50%;
+  height: 7px;
+  border-radius: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #1985A1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /* border: 3px solid white; */
+  transition: .3s ease-in-out;
+}​
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 3px solid #1985A1;
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.5);
+    background-color: #1B1B1E;
+    border: 3px solid #1985A1;
+  }
+#fontsize {
+  display: inline-block;
+  width: 100%;
 }

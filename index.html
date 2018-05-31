@@ -37,7 +37,7 @@
 							<ul class="tab-links">
 								<li class="active"><a href="#tab1">طوابع تهنئة</a></li>
 								<li><a href="#tab2">خلفيات</a></li>
-								<li><a href="#tab3">تنسيق النص</a></li>
+								<li ><a href="#tab3">تنسيق النص</a></li>
 								<li><a href="#tab4">تحميل</a></li>
 							</ul>
 
@@ -53,7 +53,7 @@
 									<!-- add bg by user -->
 									<input type="file" name="" id="span">
 									<!-- delete active object -->
-									<button onclick="deleteObj()">delete</button>
+									<button id="delete" onclick="deleteObj()">حذف</button>
 									<!-- change background -->
 									<div id="backgrounds">
 									</div>
@@ -66,16 +66,20 @@
 										<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
 											<div id="text-controls">
 												<!-- color -->
-												<label for="text-bg-color">لون الخط :</label>
-												<input class="jscolor" value="ab2567" id="jstextcolor">
 
+												<button class="jscolor {valueElement:null,value:'66ccff'}"
+												    style="width:50px; height:20px;" id="jstextcolor"></button>
+												<label for="text-bg-color">لون الخط </label>
 												<!-- bg color -->
 												<div>
-													<label for="text-bg-color">لون خلفية النص :</label>
-													<input class="jscolor" value="ab2567" id="jstextbgcolor">
+
+													<button
+												    class="jscolor {valueElement:null,value:'66ccff'}"
+												    style="width:50px; height:20px;" id="jstextbgcolor"></button>
+													<label for="text-bg-color">لون خلفية النص </label>
+
 												</div>
 											<!-- font family -->
-												<label for="font-family" style="display:inline-block">Font family:</label>
 												<select id="font-family">
 													<option value="arial">Arial</option>
 													<!-- <option value="helvetica" selected>Helvetica</option>
@@ -92,20 +96,26 @@
 													<option value="plaster">Plaster</option>
 													<option value="engagement">Engagement</option> -->
 												</select>
+												<label for="font-family" style="display:inline-block">الخط</label>
 												<br>
-												<div>
-													<label for="text-font-size">Font size:</label>
-													<input type="range" value="#FFFFFF" min="1" max="120" step="1" id="text-font-size">
+												<div id="fontsize">
+													<label for="text-font-size" >حجم الخط</label>
+													<br>
+
+													<input type="range" value="18" min="5" max="120" step="1" id="text-font-size"
+													class="range blue">
+													<div class="value">0</div>
+
 												</div>
+												<br>
 												<!-- text align -->
-												<label for="text-align" style="display:inline-block">Text align:</label>
 												<select id="text-align">
 													<option value="left">Left</option>
 													<option value="center">Center</option>
 													<option value="right">Right</option>
 													<option value="justify">Justify</option>
 												</select>
-
+												<label for="text-align" style="display:inline-block">اتجاه الخط</label>
 											</div> <!-- END OF TEXT CONTROLS DIV -->
 
 											<div id="text-controls-additional">
