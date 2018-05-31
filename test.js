@@ -313,3 +313,16 @@ jQuery(document).ready(function() {
  }
 
  elem.addEventListener("input", rangeValue);
+//allowTouchScrolling
+ var disableScroll = function(){
+   canvas.allowTouchScrolling = false;
+ };
+
+ var enableScroll = function(){
+   canvas.allowTouchScrolling = true;
+ };
+
+ canvas.on('object:moving', disableScroll);
+ canvas.on('object:scaling', disableScroll);
+ canvas.on('object:rotating', disableScroll);
+ canvas.on('mouse:up', enableScroll);
