@@ -97,10 +97,7 @@ document.getElementById('font-family').onchange = function() {
     box.set({fontFamily: this.value});
     canvas.renderAll();
     };
-document.getElementById('myDropdown').onchange = function() {
-  box.set({fontFamily: this.value});
-  canvas.renderAll();
-  };
+
 //size
 document.getElementById('text-font-size').onchange = function() {
     box.set({fontSize: this.value});
@@ -378,3 +375,7 @@ jQuery(document).ready(function() {
 //     }
 //   }
 // }
+// document.getElementById('myDropdown').onchange = function() {
+//   box.set({fontFamily: this.value});
+//   canvas.renderAll();
+//   };
