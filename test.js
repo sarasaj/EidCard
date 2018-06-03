@@ -13,7 +13,7 @@ var el = document.getElementById('res');
 var select = document.getElementById("font-family");
 //append typography to images div for drag and drop
 for (var i = 1; i <= 25; i++) {
-  $('#images').append('<img draggable="true" src="eid designs/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
+  $('#images').append('<img src="eid designs/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
 }
 //append bg images
 for (var i = 1; i <= 16; i++) {
@@ -162,91 +162,13 @@ $(document).on("click", "#savepng", function() {
 
 });
 // download png
-var link = document.createElement('a');
-    link.innerHTML = '<a href="#" class="btn btn-danger btn-md" id="download"><i class="fas fa-download"></i> تحميل الصورة</a>';
-link.addEventListener('click', function(ev) {
+function downloadCanvas(link, canvasId, filename) {
     link.href = canvas.toDataURL();
-    link.download = "mypainting.png";
+    link.download = filename;
+}
+document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'c', 'test.png');
 }, false);
-$(".downloadTap").append(link);
-
-//drag and drop
-// function handleDragStart(e) {
-//     [].forEach.call(images, function (img) {
-//         img.classList.remove('img_dragging');
-//     });
-//     this.classList.add('img_dragging');
-// }
-//
-// function handleDragOver(e) {
-//     if (e.preventDefault) {
-//         e.preventDefault(); // Necessary. Allows us to drop.
-//     }
-//
-//     e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
-//     // NOTE: comment above refers to the article (see top) -natchiketa
-//
-//     return false;
-// }
-//
-// function handleDragEnter(e) {
-//     // this / e.target is the current hover target.
-//     this.classList.add('over');
-// }
-//
-// function handleDragLeave(e) {
-//     this.classList.remove('over'); // this / e.target is previous target element.
-// }
-//
-// function handleDrop(e) {
-//     // this / e.target is current target element.
-//
-//     if (e.stopPropagation) {
-//         e.stopPropagation(); // stops the browser from redirecting.
-//     }
-//
-//     var img = document.querySelector('#images img.img_dragging');
-//     console.log('event: ', e);
-//
-//     var newImage = new fabric.Image(img, {
-//         width: 341,
-//         height: 341,
-//         // Set the center of the new object based on the event coordinates relative
-//         // to the canvas container.
-//         left: e.layerX,
-//         top: e.layerY
-//     });
-//     canvas.add(newImage);
-//
-//     return false;
-// }
-//
-// function handleDragEnd(e) {
-//     // this/e.target is the source node.
-//     [].forEach.call(images, function (img) {
-//         img.classList.remove('img_dragging');
-//     });
-// }
-//
-// if (Modernizr.draganddrop) {
-//     // Browser supports HTML5 DnD.
-//
-//     // Bind the event listeners for the image elements
-//     var images = document.querySelectorAll('#images img');
-//     [].forEach.call(images, function (img) {
-//         img.addEventListener('dragstart', handleDragStart, false);
-//         img.addEventListener('dragend', handleDragEnd, false);
-//     });
-//     // Bind the event listeners for the canvas
-//     var canvasContainer = document.getElementById('canvas-container');
-//     canvasContainer.addEventListener('dragenter', handleDragEnter, false);
-//     canvasContainer.addEventListener('dragover', handleDragOver, false);
-//     canvasContainer.addEventListener('dragleave', handleDragLeave, false);
-//     canvasContainer.addEventListener('drop', handleDrop, false);
-// } else {
-//     // Replace with a fallback to a library solution.
-//     alert("This browser doesn't support the HTML5 Drag and Drop API.");
-// }
 
 //delete active object on canvas
 function deleteObj(){
@@ -354,28 +276,3 @@ jQuery(document).ready(function() {
  canvas.on("object:selected", function(options) {
      options.target.bringToFront();
  });
-// //drop down mneu
-// /* When the user clicks on the button,
-// toggle between hiding and showing the dropdown content */
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-// }
-//
-// // Close the dropdown if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
-// document.getElementById('myDropdown').onchange = function() {
-//   box.set({fontFamily: this.value});
-//   canvas.renderAll();
-//   };
