@@ -65,7 +65,8 @@ function loadAndUse(font) {
 }
 fonts.forEach(function(font) {
   loadAndUse(font);
-  $("#myDropdown").append("<a class='fonttag' style='font-family:'"+font+"';'>"+font+"</a>");
+  $("#myDropdown").append("<a class='fonttag' style='font-family:'"+font+"';'>"+font+" اختر الخط المناسب "+"</a>");
+
   var option = document.createElement('option');
   option.innerHTML = font;
   option.value = font;
@@ -356,24 +357,24 @@ jQuery(document).ready(function() {
  canvas.on("object:selected", function(options) {
      options.target.bringToFront();
  });
-//drop down mneu
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+// //drop down mneu
+// /* When the user clicks on the button,
+// toggle between hiding and showing the dropdown content */
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
+//
+// // Close the dropdown if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }
