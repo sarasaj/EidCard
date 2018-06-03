@@ -12,6 +12,7 @@
   			font-size: 0.85em !important;
   		}
 		#logo {
+      margin-top: 4%;
 			width: 25%;
 			height: auto;
 		}
@@ -19,7 +20,7 @@
 			font-size: 4vw;
 		}
 }
-@media only screen and (min-width : 400px) and (max-width : 769px){
+@media only screen and (min-width : 400px) and (max-width : 750px){
     .canvas-container canvas {
        width: 390px !important;
        height: 390px !important;
@@ -32,11 +33,13 @@
 			font-size: 4vw !important;
 		}
 		#logo {
+      margin-top: 4%;
 			width: 25%;
 			height: auto;
 		}
 		#title {
 			font-size: 4vw;
+      display: inline;
 		}
 }
 @media only screen and (min-width : 765px){
@@ -44,6 +47,7 @@
 		font-size: 1.3vw;
 	}
 	#logo {
+    margin-top: 1%;
 		width: 15%;
 		height: auto;
 	}
@@ -76,7 +80,6 @@ html,body
 }
 #logo {
 	float: right;
-	margin-top: 1%;
 	margin-bottom: 1%;
 }
 #title {
@@ -84,9 +87,9 @@ html,body
 	text-align: right;
 	color: white;
 	float: right;
-	margin-top: 4%;
+	margin-top: 2%;
 	margin-right: 1%;
-	margin-bottom: 4%;
+	margin-bottom: 2%;
 }
 
 [draggable] {
@@ -274,6 +277,50 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
 }
 
-#textInput {
-  margin-bottom: 15px;
+#social {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+.fonttag {
+  color:black
 }

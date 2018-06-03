@@ -65,6 +65,7 @@ function loadAndUse(font) {
 }
 fonts.forEach(function(font) {
   loadAndUse(font);
+  $("#myDropdown").append("<a class='fonttag' style='font-family:'"+font+"';'>"+font+"</a>");
   var option = document.createElement('option');
   option.innerHTML = font;
   option.value = font;
@@ -95,6 +96,10 @@ document.getElementById('font-family').onchange = function() {
     box.set({fontFamily: this.value});
     canvas.renderAll();
     };
+document.getElementById('myDropdown').onchange = function() {
+  box.set({fontFamily: this.value});
+  canvas.renderAll();
+  };
 //size
 document.getElementById('text-font-size').onchange = function() {
     box.set({fontSize: this.value});
@@ -104,12 +109,30 @@ document.getElementById('jstextbgcolor').onchange = function() {
       box.set({backgroundColor: "#"+this.value});
       canvas.renderAll();
       };
+var bold = false;
 document.getElementById('bold').onclick = function() {
-    box.set({fontWeight : "bold"});
+
+    if(bold == false){
+      box.set({fontWeight : "bold"});
+      console.log("bold");
+      bold = true;
+    } else {
+      box.set({fontWeight : "normal"});
+      console.log("bold");
+      bold = false;
+    }
+
     canvas.renderAll();
     };
+var italic = false;
 document.getElementById('italic').onclick = function() {
-    box.set({fontStyle : "italic"});
+  if(bold == false){
+    box.set({fontWeight : "italic"});
+    bold = true;
+  } else {
+    box.set({fontWeight : "normal"});
+    bold = false;
+  }
     canvas.renderAll();
     };
 //align
@@ -234,10 +257,8 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set({ 'left': 50 });
-        img.set({ 'top': 50 });
-        img.scaleToWidth(100);
-        img.scaleToHeight(100);
+        img.set( { left: 0, top: 0 ,width:500,height:500});
+
 
         var objs = canvas.getObjects();
         if (objs.length) {
@@ -335,3 +356,24 @@ jQuery(document).ready(function() {
  canvas.on("object:selected", function(options) {
      options.target.bringToFront();
  });
+//drop down mneu
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
