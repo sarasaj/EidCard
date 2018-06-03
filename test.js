@@ -326,3 +326,12 @@ jQuery(document).ready(function() {
  canvas.on('object:scaling', disableScroll);
  canvas.on('object:rotating', disableScroll);
  canvas.on('mouse:up', enableScroll);
+
+ document.getElementById('textInput').onchange = function() {
+   console.log("text:"+this.value);
+     box.set({text: this.value});
+     canvas.renderAll();
+     };
+ canvas.on("object:selected", function(options) {
+     options.target.bringToFront();
+ });
