@@ -30,7 +30,7 @@
        height: 400px !important;
     }
     .tab-links a {
-			font-size: 1vw !important;
+			font-size: 3.5vw !important;
 		}
 		#logo {
       margin-top: 4%;
@@ -38,7 +38,7 @@
 			height: auto;
 		}
 		#title {
-			font-size: 4vw;
+			font-size: 3vw;
       display: inline;
 		}
 }
