@@ -162,12 +162,9 @@ $(document).on("click", "#savepng", function() {
 
 });
 // download png
-function downloadCanvas(link, canvasId, filename) {
-    link.href = canvas.toDataURL();
-    link.download = filename;
-}
 document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'c', 'test.png');
+  link.href = canvas.toDataURL();
+  link.download = "test.jpg";
 }, false);
 
 //delete active object on canvas
