@@ -163,8 +163,9 @@ $(document).on("click", "#savepng", function() {
 });
 // download png
 document.getElementById('download').addEventListener('click', function() {
-  link.href = canvas.toDataURL();
-  link.download = "test.jpg";
+    var link = this;
+    link.href = canvas.toDataURL();
+    link.download = "test.jpg";
 }, false);
 
 //delete active object on canvas
