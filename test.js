@@ -26,7 +26,8 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
   lockMovementX:true,
   lockMovementY:true,
  });
- canvas.add(img1);
+ canvas.add(img1).sendToBack();
+ canvas.renderAll();
 });
 box = new fabric.IText('..اكتب إسمك هنا', {
       left: 160,
@@ -36,8 +37,13 @@ box = new fabric.IText('..اكتب إسمك هنا', {
       fontSize: 30,
       textAlign: 'right'
 });
-canvas.add(box).setActiveObject(box);
+canvas.add(box).setActiveObject(box).bringToFront();
 fonts.unshift('Times New Roman');
+var url = "eid designs/Elearn_logo/elearn_logo2.png";
+var img = new Image();
+img.src = url;
+addLogo(img);
+canvas.renderAll();
 // Apply selected font on change
 document.getElementById('font-family').onchange = function() {
   if (this.value !== 'Times New Roman') {
@@ -205,7 +211,8 @@ function changeIt(img) {
   var name = img.src;
   addImage(name)
 }
-current = 0
+current = 0;
+currentLogo = 0;
 currentimg = ""
 function addTypo(img) {
 
@@ -267,10 +274,46 @@ jQuery(document).ready(function() {
  canvas.on('mouse:up', enableScroll);
 
  document.getElementById('textInput').oninput = function() {
-   console.log("text:"+this.value);
+   //console.log("text:"+this.value);
      box.set({text: this.value});
      canvas.renderAll();
      };
  canvas.on("object:selected", function(options) {
      options.target.bringToFront();
  });
+
+
+ function addLogo(img) {
+  var newImage = new fabric.Image(img, {
+        width: 110,
+        height: 58,
+        left:380,
+        top:20,
+        // hasControls: false,
+        // hasBorders: false,
+        lockMovementX: true,
+        lockMovementY: true
+    });
+    canvas.add(newImage);
+}
+
+ function addElearningLogo(checkboxElem) {
+  if (checkboxElem.checked) {
+    var url = "eid designs/Elearn_logo/elearn_logo2.png";
+    var img = new Image();
+    img.src = url;
+    addLogo(img);
+    canvas.renderAll();
+  } else {
+    canvas.getObjects().forEach(function (targ) {
+      if(targ.isType('image')& targ.width == 110){
+        console.log(targ);
+        canvas.remove(targ);
+      }
+    });
+  }
+  
+}
+
+
+
