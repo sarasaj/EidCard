@@ -268,13 +268,24 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
 }
 
-#social {
-  width: 40%;
+#social-list {
+  width: 50%;
   height: auto;
   margin: 0 auto;
   display: block;
+  align-items: center;
+
 }
 
 .fonttag {
   color:black !important;
+}
+.social-list li{
+  float: right;
+  margin-right: 15px;
+  opacity: 0.7;
+  filter:alpha(opacity-70);
+}
+.social-list  li:hover{
+  opacity: 1;
 }
