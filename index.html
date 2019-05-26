@@ -5,10 +5,16 @@
 		<!-- fabrix JS-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
-		<script src="jscolor.js"></script>
+		<script src="/js/jscolor.js"></script>
 		<!-- CSS and JS file -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="/css/styles.css">
+
+		<link rel="stylesheet" href="/share-bar-master/dist/css/share.bar.css">
+		<script src="s/hare-bar-master/dist/css/share.bar.js"></script>
+
+		<!-- share this social media taps -->
+		<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cea438d5676af001119e8d5&product=inline-share-buttons' async='async'></script>
 
 		<meta charset="UTF-8">
 		<title></title>
@@ -107,19 +113,6 @@
 											</div> -->
 												<select id="font-family">
 													<option value="arial">Arial</option>
-													<!-- <option value="helvetica" selected>Helvetica</option>
-													<option value="myriad pro">Myriad Pro</option>
-													<option value="delicious">Delicious</option>
-													<option value="verdana">Verdana</option>
-													<option value="georgia">Georgia</option>
-													<option value="courier">Courier</option>
-													<option value="comic sans ms">Comic Sans MS</option>
-													<option value="impact">Impact</option>
-													<option value="monaco">Monaco</option>
-													<option value="optima">Optima</option>
-													<option value="hoefler text">Hoefler Text</option>
-													<option value="plaster">Plaster</option>
-													<option value="engagement">Engagement</option> -->
 												</select>
 												<label for="font-family" style="display:inline-block">الخط</label>
 												<br>
@@ -136,14 +129,23 @@
 											</div> <!-- END OF TEXT CONTROLS DIV -->
 									</div>
 								</div>
-								<div id="tab4" class="tab">
+								<div id="tab4" class="tab" onclick="saveToServer()">
 									<div class="downloadTap">
 
 										<a href="#" class="btn btn-danger btn-md" id="download"> <i class="fas fa-download"></i>تحميل الصورة</a>
 									<!-- save png and download -->
 									<a id="savepng" href="#" class="btn btn-danger btn-md"><i class="fas fa-save"></i> حفظ الصورة</a>
+									<!-- share to social media -->
+									<!-- <div class="share-bar" 
+										data-url="https://www.cssscript.com" 
+										data-title="JavaScript and CSS" 
+										data-image-url="http://lorempixel.com/400/400/" 
+										data-hashtags="#javaScript #css">
+									</div> -->
 
-									</div>
+									<!-- 1 share this to share to social media--> 
+									<div class="sharethis-inline-share-buttons"></div>
+									
 								</div>
 							</div>
 	<!--Start of the social media accounts div -->
@@ -167,5 +169,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	<script src="test.js"></script>
+	<script src="/js/test.js"></script>
 </html>

@@ -28,7 +28,7 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
  });
  canvas.add(img1).sendToBack();
  canvas.renderAll();
-});
+},{crossOrigin:'Anonymous'});
 box = new fabric.IText('..اكتب إسمك هنا', {
       left: 160,
       top: 430,
@@ -41,6 +41,7 @@ canvas.add(box).setActiveObject(box).bringToFront();
 fonts.unshift('Times New Roman');
 var url = "eid designs/Elearn_logo/elearn_logo2.png";
 var img = new Image();
+//img.setAttribute('crossOrigin', 'anonymous');
 img.src = url;
 addLogo(img);
 canvas.renderAll();
@@ -160,6 +161,7 @@ document.getElementById('right').onclick = function() {
 $(document).on("click", "#savepng", function() {
   var newTab = window.open();
   var img  = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
   img.onload = function(){
    newTab.document.body.append(img);
   }
@@ -182,7 +184,7 @@ function deleteObj(){
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
         img.set( { left: 0, top: 0 ,width:500,height:500});
-
+        img.crossOrigin = "Anonymous";
 
         var objs = canvas.getObjects();
         if (objs.length) {
@@ -193,7 +195,7 @@ function addImage(imgLink) {
                 }
             });
         } else canvas.add(img);
-    });
+    },{crossOrigin:'Anonymous'});
 }
 
 // file upload
@@ -294,6 +296,7 @@ jQuery(document).ready(function() {
         lockMovementX: true,
         lockMovementY: true
     });
+    newImage.crossOrigin = "Anonymous";
     canvas.add(newImage);
 }
 
@@ -301,6 +304,7 @@ jQuery(document).ready(function() {
   if (checkboxElem.checked) {
     var url = "eid designs/Elearn_logo/elearn_logo2.png";
     var img = new Image();
+    img.setAttribute('crossOrigin', 'anonymous');
     img.src = url;
     addLogo(img);
     canvas.renderAll();
@@ -314,6 +318,23 @@ jQuery(document).ready(function() {
   }
   
 }
+//share 
+function saveToServer(){
+  var newTab = window.open();
+  var img  = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.onload = function(){
+   newTab.document.body.append(img);
+  }
+  img.src = canvas.toDataURL();
+  img.src.download = "mypainting1";
+
+  var link = this;
+    link.href = canvas.toDataURL();
+    link.download = "test.jpg";
+}
 
 
 
+
+//2m6kgFzZk3d9dCB
