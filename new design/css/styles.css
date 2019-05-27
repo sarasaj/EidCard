@@ -309,6 +309,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-family: 'Tajawal', sans-serif;
   font-size: 2em;
   color: #968256;
+  margin-top: 10%;
 }
 .category {
   width: 70%;

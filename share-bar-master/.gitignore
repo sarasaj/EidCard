@@ -1,9 +1,0 @@
-node_modules/
-Gemfile.lock
-.grunt/
-_SpecRunner.html
-tests/reports/*
-.sass-cache/
-src/fonts/
-dist/.DS_Store
-.DS_Store
