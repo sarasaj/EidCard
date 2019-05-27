@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Changa|El+Messiri|Lalezar|Pacifico|Tajawal|Lemonada');
 
-@media only screen and (max-width: 399px) {
+@media only screen and (max-width: 399px)and (max-width : 750px) {
     .canvas-container canvas {
        width: 350px !important;
        height: auto !important;
@@ -11,18 +11,61 @@
     }
 		.tab-links a {
   			font-size: 0.85em !important;
-  		}
-		#uniLogo , #elearningLogo {
-      margin-top: 4%;
-			width: 25%;
-			height: auto;
-		}
-		#title {
-			font-size: 4vw;
-		}
+  	}
+
+    #uniLogo {
+      margin-top: 1em;
+      width: 11em;
+    }
+    #elearningLogo {
+      margin-top: 1em;
+      width: 7em;
+    }
+		.title {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    .vl {
+      border-left: 1px solid white;
+      height: 4.5em;
+      float: right;
+      margin: 1%;
+      margin-top: 1em;
+      opacity: 0.7;
+    }
+    .pageText {
+      font-size: 1em;
+      margin-top: 1em;
+    }
+    .category {
+      width: 40%;
+      height: auto;
+
+    }
+    .footer {
+      margin-top: 1.5em;
+    }
+    .footerText {
+      font-size: 0.8em;
+    }
+    #hrLine {
+      clear: both;
+      visibility: hidden;
+    }
+    
+    
+
 }
 @media only screen and (min-width : 400px) and (max-width : 750px){
-    .canvas-container canvas {
+  .vl {
+    border-left: 1px solid white;
+    height: 4.5em;
+    float: right;
+    margin: 1%;
+    margin-top: 1em;
+    opacity: 0.7;
+  }  
+  .canvas-container canvas {
        width: 390px !important;
        height: 390px !important;
     }
@@ -33,39 +76,85 @@
     .tab-links a {
 			font-size: 0.9em !important;
 		}
-		#uniLogo , #elearningLogo {
-      margin-top: 4%;
-      margin-bottom: 3%;
-    }
     #uniLogo {
+      margin-top: 1em;
       width: 12em;
     }
     #elearningLogo {
+      margin-top: 1em;
       width: 8em;
     }
-		#title {
-			font-size: 1em;
-      display: inline;
-		}
+		.title {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    #hrLine {
+      visibility: hidden;
+    }
+    .pageText {
+      font-size: 1em;
+      margin-top: 1em;
+    }
+    .category {
+      width: 40%;
+      height: auto;
+
+    }
+    .footer{
+      margin-top: 1.5em;
+    }
 }
 @media only screen and (min-width : 765px){
-	.tab-links a {
+  #hrLine {
+    display: block;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 5%;
+  }
+  .footerText {
+    font-size: 1em;
+    margin-top: 4%;
+  }
+  .pageText {
+    font-size: 2em;
+    margin-top: 10%;
+  }
+  .category {
+    width: 40%;
+    height: auto;
+    margin-bottom: 10%;
+  }
+  .footer {
+    size: 20%;
+  }
+  .title {
+    font-size: 2em;
+  }
+  .vl {
+    border-left: 1px solid white;
+    height: 4.5em;
+    float: right;
+    margin: 1%;
+    margin-top: 2em;
+    opacity: 0.5;
+  }
+  .tab-links a {
 		font-size: 1.3vw;
 	}
 	#uniLogo {
-    margin-top: 1%;
     width: 16em;
   }
   #elearningLogo {
-    margin-top: 1%;
     width: 10em;
   }
-	#title {
-		font-size: 2vw;
+  #uniLogo , #elearningLogo {
+    float: right;
+    margin: 1em;
   }
   .header{
-    height:50vh;
-    width:auto
+    height:40%;
+    width:auto;
+    padding: 2em;
   }
 }
 html,body
@@ -91,23 +180,10 @@ html,body
 	background-size:cover;
 
 }
-#uniLogo , #elearningLogo {
-	float: right;
-  margin: 1em;
-}
-.vl {
-  border-left: 1px solid white;
-  height: 4.5em;
-  float: right;
-  margin: 1%;
-  margin-top: 2em;
-  opacity: 0.5;
-}
 .title {
 	font-family: 'Tajawal', sans-serif;
 	text-align: center;
   color: white;
-  font-size: 2em;
   font-weight: lighter;
   margin-top: 0.6em;
 }
@@ -289,11 +365,9 @@ input[type="range"]::-webkit-slider-thumb {
 
 #social-list {
   width: 50%;
-  height: auto;
   margin: 0 auto;
-  display: block;
+  display: inline;
   align-items: center;
-
 }
 
 .fonttag {
@@ -311,31 +385,15 @@ input[type="range"]::-webkit-slider-thumb {
 
 .pageText {
   font-family: 'Tajawal', sans-serif;
-  font-size: 2em;
   color: #968256;
-  margin-top: 10%;
-}
-.category {
-  width: 70%;
-  height: auto;
-  margin-bottom: 10%;
-}
-.footer {
-  background-color: #006770;
-  size: 20%;
-  padding: 3%;
 }
 
-#hrLine {
-  display: block;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin-top: 5%;
+.footer {
+  background-color: #006770;
+  padding: 1em;
 }
 
 .footerText {
   font-family: 'Tajawal', sans-serif;
-  font-size: 1em;
   color: white;
-  margin-top: 4%;
 }
