@@ -304,3 +304,13 @@ input[type="range"]::-webkit-slider-thumb {
 .social-list  li:hover{
   opacity: 1;
 }
+
+.pageText {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 2em;
+  color: #968256;
+}
+.category {
+  width: 70%;
+  height: auto;
+}

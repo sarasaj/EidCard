@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- fabrix JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
+		<script src="/js/jscolor.js"></script>
+		<!-- CSS and JS file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/styles.css">
+
+		<!-- share this social media taps -->
+		<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cea438d5676af001119e8d5&product=inline-share-buttons' async='async'></script>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	<div class="container-fluid">
+		<!--1st row -->
+		<div class="row">
+			<div class="header col-md-12 col-sm-12 col-xs-12" style="background-image:url('images/04-01.png');" >
+				<img class="img-responsive" src="images/05.png" id="uniLogo" alt="unversity logo">
+				<div class="vl"></div>
+				<img class="img-responsive" src="images/06.png" id="elearningLogo" alt="eleraning logo">
+				<br>
+				<br>
+				<div id="title">
+					<div>نظام إنشاء التهاني الإلكترونية</div>
+					<div>عمادة التعلم الإلكتروني والتعليم عن بعد</div>
+
+				</div>
+			</div>
+		</div>
+		<!--2nd row -->
+		<div class="row">
+					<div class="col-sm-12 col-md-7 box" id="canvas-container">
+							<canvas id="c" style="border:1px solid black;" ></canvas>
+
+					</div>
+
+					<div class="col-sm-12 col-md-5 editingArea">
+						<div class="tabs">
+							<ul class="tab-links">
+								<li class="active"><a href="#tab1">طوابع تهنئة</a></li>
+								<li><a href="#tab2">خلفيات</a></li>
+								<li ><a href="#tab3">تنسيق النص</a></li>
+								<li><a href="#tab4">تحميل</a></li>
+							</ul>
+
+							<div class="tab-content">
+								<div id="tab1" class="tab active">
+									<!-- eid typograpgy to drag and drop -->
+									<div id="images">
+
+									</div>
+									<br>
+									أضف شعار عمادة التعلم الالكتروني <input type="checkbox" id="logoCheckBox" value="1" onchange="addElearningLogo(this)">
+									<br>
+
+								</div>
+
+								<div id="tab2" class="tab">
+									<!-- add bg by user -->
+									<input type="file" name="" id="span">
+									<div id="fileSize">المقاس يجب أن يكون ٥٠٠*٥٠٠</div>
+									<!-- change background -->
+									<div id="backgrounds">
+									</div>
+								</div>
+
+								<div id="tab3" class="tab">
+										<!-- add text to canvas -->
+										<input type="text" style="width:60%;margin:0 auto;display:block; margin-bottom: 15px;"
+										id="textInput" placeholder="عدل النص ثم اضغط على زر الرجوع">
+										 <button id="addtext" onclick="Addtext()">إضافة نص</button>
+
+										 <!-- delete active object -->
+	 									<button id="delete" onclick="deleteObj()">حذف</button>
+										<!-- text align -->
+										<div id="alining">
+											<a href="#" class="btn btn-info btn-md" id="justify"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="center"><i class="fa fa-align-center" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="right"><i class="fa fa-align-right" aria-hidden="true"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="left"><i class="fa fa-align-left" aria-hidden="true"></i></a>
+
+											<a href="#" class="btn btn-info btn-md" id="bold"><i class="fas fa-bold"></i></a>
+											<a href="#" class="btn btn-info btn-md" id="italic"><i class="fas fa-italic"></i></a>
+										</div>
+										 <!-- text editing -->
+										<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
+											<div id="text-controls">
+												<!-- color -->
+
+												<input class="jscolor" value="66ccff" id="jstextcolor">
+												<label for="text-bg-color">لون الخط </label>
+												<!-- bg color -->
+												<div>
+
+													<input class="jscolor" value="66ccff" id="jstextbgcolor">
+													<label for="text-bg-color">لون خلفية النص </label>
+
+												</div>
+											<!-- font family -->
+											<!-- <div class="dropdown">
+											<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+											  <div id="myDropdown" class="dropdown-content">
+
+											  </div>
+											</div> -->
+												<select id="font-family">
+													<option value="arial">Arial</option>
+												</select>
+												<label for="font-family" style="display:inline-block">الخط</label>
+												<br>
+												<div id="fontsize">
+													<label for="text-font-size" >حجم الخط</label>
+													<br>
+
+													<input type="range" value="30" min="5" max="120" step="1" id="text-font-size"
+													class="range blue">
+													<div class="value">30</div>
+
+												</div>
+												<br>
+											</div> <!-- END OF TEXT CONTROLS DIV -->
+									</div>
+								</div>
+								<div id="tab4" class="tab" onclick="saveToServer()">
+									<div class="downloadTap">
+
+										<a href="#" class="btn btn-danger btn-md" id="download"> <i class="fas fa-download"></i>تحميل الصورة</a>
+									<!-- save png and download -->
+									<a id="savepng" href="#" class="btn btn-danger btn-md"><i class="fas fa-save"></i> حفظ الصورة</a>
+									<!-- share to social media -->
+									<!-- <div class="share-bar" 
+										data-url="https://www.cssscript.com" 
+										data-title="JavaScript and CSS" 
+										data-image-url="http://lorempixel.com/400/400/" 
+										data-hashtags="#javaScript #css">
+									</div> -->
+
+									<!-- 1 share this to share to social media--> 
+									<div class="sharethis-inline-share-buttons"></div>
+									
+								</div>
+							</div>
+	<!--Start of the social media accounts div -->
+							<div id="social-list">
+								<ul class="list-unstyled  social-list">
+									<li><a href="https://uqu.edu.sa/elearn"><img src="eid designs/images/Social_Media_icon/worldwide.png	" alt="website"/></a> </li>
+									<li><a href="https://www.youtube.com/ElearningUqu"><img src="eid designs/images/Social_Media_icon/youtube.png" alt="Youtube"/></a> </li>
+									<li><a href="https://twitter.com/ElearningUQU"><img src="eid designs/images/Social_Media_icon/twitter.png	" alt="Twitter"/></a> </li>
+										 </ul>
+							</div>
+	<!-- End of the social media accounts div-->
+							<!-- <img class="img-responsive" src="socialmedia1.png" id="social" alt="social media accounts"> -->
+						</div>
+				</div>
+	</div>
+	</body>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="/js/test.js"></script>
+</html>
