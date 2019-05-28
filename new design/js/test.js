@@ -39,7 +39,7 @@ box = new fabric.IText('..اكتب إسمك هنا', {
 });
 canvas.add(box).setActiveObject(box).bringToFront();
 fonts.unshift('Times New Roman');
-var url = "eid designs/Elearn_logo/elearn_logo2.png";
+var url = "images/06.png";
 var img = new Image();
 //img.setAttribute('crossOrigin', 'anonymous');
 img.src = url;

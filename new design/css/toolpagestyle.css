@@ -33,15 +33,6 @@
       margin-top: 1em;
       opacity: 0.7;
     }
-    .pageText {
-      font-size: 1em;
-      margin-top: 1em;
-    }
-    .category {
-      width: 40%;
-      height: auto;
-
-    }
     .footer {
       margin-top: 1.5em;
     }
@@ -88,18 +79,6 @@
       font-size: 1.5em;
       margin-bottom: 0.5em;
     }
-    #hrLine {
-      visibility: hidden;
-    }
-    .pageText {
-      font-size: 1em;
-      margin-top: 1em;
-    }
-    .category {
-      width: 40%;
-      height: auto;
-
-    }
     .footer{
       margin-top: 1.5em;
     }
@@ -114,15 +93,6 @@
   .footerText {
     font-size: 1em;
     margin-top: 4%;
-  }
-  .pageText {
-    font-size: 2em;
-    margin-top: 10%;
-  }
-  .category {
-    width: 40%;
-    height: auto;
-    margin-bottom: 10%;
   }
   .footer {
     size: 20%;
@@ -152,10 +122,10 @@
     margin: 1em;
   }
   .header{
-    height:40%;
+    height:30%;
     width:auto;
-    padding: 2em;
-    
+    padding: 1em;
+    border-bottom: 8px solid #ffffff;
   }
 }
 html,body
@@ -167,18 +137,18 @@ html,body
     overflow-x: hidden;
 }
 .editingArea {
-	background-color: #1B1B1E;
+	background-color: white;
 	color: white;
 }
 #canvas-container {
-	background-color: #ebeced;
+	background-color: white;
 	padding: 3%;
 }
 
 .header {
   background-position:center;
 	background-repeat:no-repeat;
-	background-size:cover;
+  background-size:100%;
 
 }
 .title {
@@ -216,6 +186,14 @@ margin-bottom: 5%;
 }
 /*----- Tab Links -----*/
 /* Clearfix */
+.tapsBorder {
+  border-bottom: 6px solid #006770;
+  border-top: 14px solid #006770;
+  border-width: 100%;
+  padding: 0.3em;
+  margin-bottom: 0;
+  width: 100vw;
+}
 .tab-links:after {
 display:block;
 clear:both;
@@ -230,8 +208,8 @@ list-style:none;
 padding:10px 10px;
 display:inline-block;
 border-radius:3px 3px 0px 0px;
-background:#1B1B1E;
-font-family: 'Tajawal', sans-serif;
+background:white;
+font-family: 'Changa', sans-serif;
 font-weight:600;
 color:#9a885d;
 transition:all linear 0.15s;
@@ -242,16 +220,13 @@ text-decoration:none;
 color :white;
 }
 li.active a, li.active a:hover {
-background:#58A4B0;
+background:#9a885d;
 color:white;
 }
 /*----- Content of Tabs -----*/
 .tab-content {
 padding:3%;
-border-radius:3px;
-border: 1px solid #1985A1;
-box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-background:#1B1B1E;
+background:white;
 margin-left: 10px;
 }
 .tab {
@@ -397,4 +372,7 @@ input[type="range"]::-webkit-slider-thumb {
 .footerText {
   font-family: 'Tajawal', sans-serif;
   color: white;
+}
+#downloadIcon {
+  height: 1.7em;
 }
