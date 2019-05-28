@@ -108,9 +108,6 @@
     margin-top: 2em;
     opacity: 0.5;
   }
-  .tab-links a {
-		font-size: 1.3vw;
-	}
 	#uniLogo {
     width: 16em;
   }
@@ -194,18 +191,11 @@ margin-bottom: 5%;
   margin-bottom: 0;
   width: 100vw;
 }
-.tab-links:after {
-display:block;
-clear:both;
-content:'';
+
+.tab-links {
+  padding-right: 2em;
 }
-.tab-links li {
-margin:0px 0px;
-float:right;
-list-style:none;
-}
-.tab-links a {
-padding:10px 10px;
+.tablink {
 display:inline-block;
 border-radius:3px 3px 0px 0px;
 background:white;
@@ -213,13 +203,17 @@ font-family: 'Changa', sans-serif;
 font-weight:600;
 color:#9a885d;
 transition:all linear 0.15s;
+border: 0;
+margin-left: 0.6em;
+margin-right: 0.6em;
+font-size: 1.3em;
 }
-.tab-links a:hover {
-background:#9a885d;
+.tablink:hover {
+background-color:#9a885d;
 text-decoration:none;
 color :white;
 }
-li.active a, li.active a:hover {
+.tablinks button.active{
 background:#9a885d;
 color:white;
 }
@@ -244,7 +238,7 @@ display:block;
   background: white;
 }
 input[type=file] {
-    background-color: #1985A1;
+    background-color: #006770;
     border: none;
     color: white;
     width: 75%;
@@ -258,12 +252,13 @@ input[type=file] {
     -webkit-border-radius: 5px;
 }
 #delete , #addtext{
-  background-color: #1985A1;
+  background-color: #006770;
   border: none;
+  border-radius: 15px;
   color: white;
   text-decoration: none;
   font-family: 'Changa', sans-serif;
-  width: 75%;
+  width: 50%;
   display: table;
   margin: 0 auto;
   margin-bottom: 15px;
@@ -282,7 +277,7 @@ label {
 
 .value {
   display: inline-block;
-  border-bottom: 4px dashed #bdc3c7;
+  border-bottom: 4px dashed #968256;
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 1%;
@@ -293,14 +288,14 @@ label {
 input[type="range"] {
   display: inline-block;
   -webkit-appearance: none;
-  background-color: #ebeced;
+  background-color: #006770;
   width: 50%;
-  height: 7px;
+  height: 2px;
   border-radius: 10px;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background-color: #1985A1;
+  background-color: #968256;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -309,12 +304,12 @@ input[type="range"]::-webkit-slider-thumb {
 }​
   input[type="range"]::-webkit-slider-thumb:hover {
     background-color: white;
-    border: 3px solid #1985A1;
+    border: 3px solid #006770;
   }
   input[type="range"]::-webkit-slider-thumb:active {
     transform: scale(1.5);
     background-color: #1B1B1E;
-    border: 3px solid #1985A1;
+    border: 3px solid #006770;
   }
 #fontsize {
   display: inline-block;
@@ -332,13 +327,6 @@ input[type="range"]::-webkit-slider-thumb {
   width: 80%;
   margin: 0 auto;
 }
-#fileSize {
-  width: 80%;
-  margin: 0 auto;
-  font-family: 'Changa', sans-serif;
-  text-align: center;
-}
-
 #social-list {
   width: 50%;
   margin: 0 auto;
@@ -362,6 +350,8 @@ input[type="range"]::-webkit-slider-thumb {
 .pageText {
   font-family: 'Tajawal', sans-serif;
   color: #968256;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .footer {
@@ -375,4 +365,29 @@ input[type="range"]::-webkit-slider-thumb {
 }
 #downloadIcon {
   height: 1.7em;
+}
+input[type=text] {
+  width:100%;
+  margin:0 auto;
+  display:block;
+  margin-bottom: 15px;
+  border:1px solid #968256;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+::placeholder {
+  color:  #968256;
+  opacity: 1; /* Firefox */
+  font-family: 'Tajawal', sans-serif;
+  text-align: center;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+font-family: 'Tajawal', sans-serif;
+ color:  #968256;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+font-family: 'Tajawal', sans-serif;
+color:  #968256;
 }

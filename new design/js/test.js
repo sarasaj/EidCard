@@ -238,25 +238,12 @@ function addTypo(img) {
     current++;
 }
 
-jQuery(document).ready(function() {
-  jQuery('.tabs .tab-links a').on('click', function(e) {
-    var currentAttrValue = jQuery(this).attr('href');
-    // Show/Hide Tabs
-    jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-    // Change/remove current tab to active
-    jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-    e.preventDefault();
-
-    // Show/Hide Tabs
-    jQuery('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
-  });
-});
  // range slider handlers
  var elem = document.querySelector('input[type="range"]');
 
  var rangeValue = function(){
    var newValue = elem.value;
-   var target = document.querySelector('.value');
+   var target = document.getElementsByClassName('.rangevalue');
    target.innerHTML = newValue;
  }
 
@@ -298,16 +285,18 @@ jQuery(document).ready(function() {
     });
     newImage.crossOrigin = "Anonymous";
     canvas.add(newImage);
+    canvas.renderAll();
 }
 
  function addElearningLogo(checkboxElem) {
   if (checkboxElem.checked) {
-    var url = "eid designs/Elearn_logo/elearn_logo2.png";
+    // var url = "images/elearn_logo1.png";
+    var url = "images/elearn_logo2.png";
     var img = new Image();
     img.setAttribute('crossOrigin', 'anonymous');
     img.src = url;
     addLogo(img);
-    canvas.renderAll();
+    
   } else {
     canvas.getObjects().forEach(function (targ) {
       if(targ.isType('image')& targ.width == 110){
@@ -333,7 +322,20 @@ function saveToServer(){
     link.href = canvas.toDataURL();
     link.download = "test.jpg";
 }
+//open tab
+function openTab(evt,name){
+  tabcontent = document.getElementsByClassName("tab");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(name).style.display = "block";
+  evt.currentTarget.className += " active";
 
+}
 
 
 
