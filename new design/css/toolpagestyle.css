@@ -172,7 +172,6 @@ html,body
 }
 #backgrounds {
 	display: inline-block;
-  /* border: 1px solid white; */
 }
 
 /*----- Tabs -----*/
@@ -233,9 +232,9 @@ display:block;
 }
 
 #text_color {
-  -webkit-text-fill-color: rgba(0, 0, 0, 1);
+  -webkit-text-fill-color: white;
   -webkit-opacity: 1;
-  background: white;
+  background:#006770;
 }
 input[type=file] {
     background-color: #006770;
@@ -390,4 +389,7 @@ font-family: 'Tajawal', sans-serif;
 ::-ms-input-placeholder { /* Microsoft Edge */
 font-family: 'Tajawal', sans-serif;
 color:  #968256;
+}
+i {
+  color: #006770;
 }
