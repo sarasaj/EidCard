@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- fabrix JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
+		<script src="/js/jscolor.js"></script>
+		<!-- CSS and JS file -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/toolpagestyle.css">
+
+		<!-- share this social media taps -->
+		<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cea438d5676af001119e8d5&product=inline-share-buttons' async='async'></script>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	<div class="container-fluid">
+		<!--1st row (header)-->
+		<div class="row header" style="background-image:url('images/04-01.png');">
+			<div class="order-md-2 order-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12"  >
+				<div class="d-flex flex-row-reverse bd-highlight">
+					<div class="p-2 bd-highlight">
+						<img class="img-responsive" src="images/05.png" id="uniLogo" alt="unversity logo">
+					</div>
+					<div class="p-2 bd-highlight">
+						<div class="vl"></div>
+					</div>
+					<div class="p-2 bd-highlight">
+						<img class="img-responsive" src="images/06.png" id="elearningLogo" alt="eleraning logo">
+					</div>
+					
+				</div>
+			</div>
+			<div class="order-md-1 order-lg-1 title col-sm-12 col-xs-12 col-lg-4 col-md-4" >
+					<div class="text-center">بطاقات التهنئة الإلكترونية</div>
+					<div class="text-center">تهنئة مخصصة باسمك</div>
+
+			</div>
+			
+		</div>
+		<!--2nd row -->
+		<div class="row hide">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-links tapsBorder d-flex flex-row-reverse bd-highlight align-self-center">
+					<button class="tablink" onclick="openTab(event,'tab1')">مخطوطات</button>
+					<span class="tablink">|</span>
+					<button class="tablink" onclick="openTab(event,'tab2')">خلفيات</button>
+					<span class="tablink">|</span>
+					<button class="tablink" onclick="openTab(event,'tab3')">تنسيق النص</button>
+					<span class="tablink">|</span>
+					<button class="tablink" onclick="openTab(event,'tab4')"><img class="img-responsive" src="images/10.png" id="downloadIcon"></button>
+				</div>
+			
+		</div>
+		<!--3rd row -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 box d-flex justify-content-center" id="canvas-container">
+				<canvas id="c" style=" position: relative;" class="" ></canvas>
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-0 col-lg-0 show">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-links tapsBorder d-flex p-2 flex-row-reverse bd-highlight align-self-center">
+						<button class="tablink" onclick="openTab(event,'tab1')">مخطوطات</button>
+						<button class="tablink" onclick="openTab(event,'tab2')">خلفيات</button>
+						<button class="tablink" onclick="openTab(event,'tab3')">تنسيق النص</button>
+						<button class="tablink" onclick="openTab(event,'tab4')"><img class="img-responsive" src="images/10.png" id="downloadIcon"></button>
+					</div>
+				
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 editingArea d-flex justify-content-center" >
+				<div class="tabs ">		
+					<div class="tab-content">
+						<div id="tab1" class="tab active">
+							<!-- eid typograpgy to drag and drop -->
+							<div id="images">
+							</div>
+							<br>
+							<div class="pageText">أضف شعار عمادة التعلم الالكتروني <input type="checkbox" id="logoCheckBox" value="1" onchange="addElearningLogo(this)"></div>
+							<br>
+
+						</div>
+
+						<div id="tab2" class="tab">
+							<!-- add bg by user -->
+							<input type="file" name="" id="span">
+							<div class="pageText">المقاس يجب أن يكون ٥٠٠*٥٠٠</div>
+							<!-- change background -->
+							<div id="backgrounds">
+							</div>
+						</div>
+
+						<div id="tab3" class="tab">
+								<!-- add text to canvas -->
+								<input type="text" 
+								id="textInput" placeholder="عدل النص ثم اضغط على زر الرجوع">
+								<div class="d-flex justify-content-around flex-row-reverse">
+									<!-- add text to canvas -->
+									<button id="addtext" onclick="Addtext()">إضافة نص</button>
+
+									<!-- delete active object -->
+									<button id="delete" onclick="deleteObj()">حذف</button>
+								</div>
+								
+								<!-- text align -->
+								<div id="alining" class="text-center">
+									<a href="#" class="btn btn-md" id="justify"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+									<a href="#" class="btn btn-md" id="center"><i class="fa fa-align-center" aria-hidden="true"></i></a>
+									<a href="#" class="btn btn-md" id="right"><i class="fa fa-align-right" aria-hidden="true"></i></a>
+									<a href="#" class="btn btn-md" id="left"><i class="fa fa-align-left" aria-hidden="true"></i></a>
+
+									<a href="#" class="btn btn-md" id="bold"><i class="fas fa-bold"></i></a>
+									<a href="#" class="btn btn-md" id="italic"><i class="fas fa-italic"></i></a>
+								</div>
+								<!-- text editing -->
+								<div id="text-wrapper" style="margin-top: 10px" ng-show="getText()" class="text-center">
+									<div id="text-controls">
+										<!-- color -->
+
+										<input class="jscolor" value="006770" id="jstextcolor">
+										<label class="pageText" for="text-bg-color">لون الخط </label>
+										<!-- bg color -->
+										<div>
+
+											<input class="jscolor" value="006770" id="jstextbgcolor">
+											<label class="pageText" for="text-bg-color">لون خلفية النص </label>
+
+										</div>
+			
+										<select id="font-family">
+											<option value="arial">Arial</option>
+										</select>
+										<label class="pageText" for="font-family" style="display:inline-block">الخط</label>
+										<br>
+										<div id="fontsize">
+											<label class="pageText" for="text-font-size" >حجم الخط</label>
+											<br>
+											<div class="pageText value" id="rangevalue"> 30</div>
+											<input type="range" value="30" min="5" max="120" step="1" id="text-font-size"
+											class="range blue">
+											
+
+										</div>
+										<br>
+									</div> <!-- END OF TEXT CONTROLS DIV -->
+							</div>
+						</div>
+						<div id="tab4" class="tab" >
+							<div class="downloadTap text-center">
+
+									<a href="#" class="btn btn-info btn-md" id="download"> <i class="fas fa-download"></i> تحميل الصورة</a>
+								<!-- save png and download -->
+								<a id="savepng" href="#" class="btn btn-info btn-md"><i class="fas fa-save"></i> حفظ الصورة</a>
+								<!-- share to social media -->
+								<!-- <div class="share-bar" 
+									data-url="https://www.cssscript.com" 
+									data-title="JavaScript and CSS" 
+									data-image-url="http://lorempixel.com/400/400/" 
+									data-hashtags="#javaScript #css">
+								</div> -->
+
+								<!-- 1 share this to share to social media--> 
+								<br>
+								<div class="sharethis-inline-share-buttons"></div>
+								
+							</div>
+						</div>
+
+						<!--Start of the social media accounts div -->
+						<div id="social-list">
+							<ul class="list-unstyled  social-list">
+								<li><a href="https://uqu.edu.sa/elearn"><img src="eid designs/images/Social_Media_icon/worldwide.png	" alt="website"/></a> </li>
+								<li><a href="https://www.youtube.com/ElearningUqu"><img src="eid designs/images/Social_Media_icon/youtube.png" alt="Youtube"/></a> </li>
+								<li><a href="https://twitter.com/ElearningUQU"><img src="eid designs/images/Social_Media_icon/twitter.png	" alt="Twitter"/></a> </li>
+									</ul>
+						</div>
+						<!-- End of the social media accounts div-->
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--3rd row(footer) -->
+		<div class="row footer d-flex justify-content-center">
+			<div class="col-md-4 col-sm-12 col-xs-12 text-center">
+				<div class="footerText">
+					<a>سياسة الخصوصية</a>
+					|
+					<a>حقوق النشر</a>
+					|
+					<a>اتفاقية الاستخدام</a>
+				</div>
+			</div>
+			<div class="col-md-5 hidden-sm hidden-xs text-center align-self-center">
+				<hr id="hrLine" class="hidden-sm hidden-xs"/>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<!--Start of the social media accounts div -->
+				<div id="social-list">
+						<ul class="list-unstyled  social-list">
+							<li><a href="https://uqu.edu.sa/elearn"><img src="eid designs/images/Social_Media_icon/worldwide.png	" alt="website"/></a> </li>
+							<li><a href="https://www.youtube.com/ElearningUqu"><img src="eid designs/images/Social_Media_icon/youtube.png" alt="Youtube"/></a> </li>
+							<li><a href="https://twitter.com/ElearningUQU"><img src="eid designs/images/Social_Media_icon/twitter.png	" alt="Twitter"/></a> </li>
+						</ul>
+				</div>
+				<!-- End of the social media accounts div-->
+			</div>
+		</div>
+	</div>
+	</body>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="/js/testEid.js"></script>
+</html>
