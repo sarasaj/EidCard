@@ -20,8 +20,8 @@
 	<body>
 	<div class="container-fluid">
 		<!--1st row (header)-->
-		<div class="row">
-			<div class="header col-md-12 col-sm-12 col-xs-12" style="background-image:url('images/04-01.png');" >
+		<div class="row header" style="background-image:url('images/04-01.png');">
+			<div class="order-md-2 order-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12"  >
 				<div class="d-flex flex-row-reverse bd-highlight">
 					<div class="p-2 bd-highlight">
 						<img class="img-responsive" src="images/05.png" id="uniLogo" alt="unversity logo">
@@ -32,18 +32,19 @@
 					<div class="p-2 bd-highlight">
 						<img class="img-responsive" src="images/06.png" id="elearningLogo" alt="eleraning logo">
 					</div>
-					<div class="title flex-grow-1 bd-highlight" >
-							<div class="text-center">بطاقات التهنئة الإلكترونية</div>
-							<div class="text-center">تهنئة مخصصة باسمك</div>
-		
-					</div>
+					
 				</div>
-				
 			</div>
+			<div class="order-md-1 order-lg-1 title col-sm-12 col-xs-12 col-lg-4 col-md-4" >
+					<div class="text-center">بطاقات التهنئة الإلكترونية</div>
+					<div class="text-center">تهنئة مخصصة باسمك</div>
+
+			</div>
+			
 		</div>
 		<!--2nd row -->
-		<div class="row ">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-links tapsBorder d-flex flex-row-reverse bd-highlight">
+		<div class="row hide">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-links tapsBorder d-flex flex-row-reverse bd-highlight align-self-center">
 					<button class="tablink" onclick="openTab(event,'tab1')">مخطوطات</button>
 					<span class="tablink">|</span>
 					<button class="tablink" onclick="openTab(event,'tab2')">خلفيات</button>
@@ -52,20 +53,23 @@
 					<span class="tablink">|</span>
 					<button class="tablink" onclick="openTab(event,'tab4')"><img class="img-responsive" src="images/10.png" id="downloadIcon"></button>
 				</div>
-			<!-- <ul class="tab-links tapsBorder">
-				<li class="active"><a href="#tab1">مخطوطات</a></li>
-				<li><a href="#tab2">خلفيات</a></li>
-				<li ><a href="#tab3">تنسيق النص</a></li>
-				<li><a href="#tab4"><img class="img-responsive" src="images/10.png" id="downloadIcon"></a></li>
-			</ul> -->
+			
 		</div>
 		<!--3rd row -->
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 box d-flex justify-content-center" id="canvas-container">
-				<canvas id="c" style="border:1px solid black;" class="" ></canvas>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 box d-flex justify-content-center" id="canvas-container">
+				<canvas id="c" style=" position: relative;" class="" ></canvas>
 
 			</div>
-
+			<div class="col-xs-12 col-sm-12 col-md-0 col-lg-0 show">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-links tapsBorder d-flex p-2 flex-row-reverse bd-highlight align-self-center">
+						<button class="tablink" onclick="openTab(event,'tab1')">مخطوطات</button>
+						<button class="tablink" onclick="openTab(event,'tab2')">خلفيات</button>
+						<button class="tablink" onclick="openTab(event,'tab3')">تنسيق النص</button>
+						<button class="tablink" onclick="openTab(event,'tab4')"><img class="img-responsive" src="images/10.png" id="downloadIcon"></button>
+					</div>
+				
+			</div>
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 editingArea d-flex justify-content-center" >
 				<div class="tabs ">		
 					<div class="tab-content">
@@ -158,6 +162,7 @@
 								</div> -->
 
 								<!-- 1 share this to share to social media--> 
+								<br>
 								<div class="sharethis-inline-share-buttons"></div>
 								
 							</div>
