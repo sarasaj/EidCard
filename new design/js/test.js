@@ -1,4 +1,3 @@
-
 var canvas = this.__canvas  = new fabric.Canvas('c', {
   preserveObjectStacking: true,
 });
@@ -15,10 +14,10 @@ var select = document.getElementById("font-family");
 for (var i = 1; i <= 25; i++) {
   $('#images').append('<img src="eid designs/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
 }
-//append bg images
-for (var i = 1; i <= 16; i++) {
-  $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="eid designs/backgrounds/'+i+'.jpg" />');
-}
+// //append bg images
+// for (var i = 1; i <= 16; i++) {
+//   $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="eid designs/backgrounds/'+i+'.jpg" />');
+// }
 
 fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
  var img1 = myImg.set({
@@ -316,9 +315,9 @@ jQuery(document).ready(function() {
       }
     });
   }
-  
+
 }
-//share 
+//share
 function saveToServer(){
   var newTab = window.open();
   var img  = new Image();
