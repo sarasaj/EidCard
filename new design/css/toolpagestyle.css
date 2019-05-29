@@ -159,10 +159,10 @@ html,body
 .typo {
 	width:20%;
 	height: auto;
-	border: 1px solid grey;
+	border: 1px solid #9a885d;
 }
 #images {
-	background-color: #1B1B1E;
+	background-color: #c7b68c;
 	width: 100%;
 	margin: auto;
 }
@@ -226,6 +226,7 @@ margin-left: 10px;
 display:none;
 width: 100%;
 margin: 0 auto;
+padding: 1.5em;
 }
 .tab.active {
 display:block;
@@ -240,8 +241,6 @@ input[type=file] {
     background-color: #006770;
     border: none;
     color: white;
-    width: 75%;
-    text-decoration: none;
     cursor: pointer;
     width: 75%;
     display: table;
@@ -253,16 +252,17 @@ input[type=file] {
 #delete , #addtext{
   background-color: #006770;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   color: white;
   text-decoration: none;
   font-family: 'Changa', sans-serif;
-  width: 50%;
-  display: table;
-  margin: 0 auto;
+  width: 30%;
+  height: 2.5em;
+  /*display: table;
+  margin: 0 auto; */
   margin-bottom: 15px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 label {
   text-align: right;
@@ -276,7 +276,6 @@ label {
 
 .value {
   display: inline-block;
-  border-bottom: 4px dashed #968256;
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 1%;
@@ -321,7 +320,14 @@ input[type="range"]::-webkit-slider-thumb {
 #download, #savepng {
   font-family: 'Changa', sans-serif;
   margin: 3%;
-}
+  background-color: #006770;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 15px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+} 
 .downloadTap {
   width: 80%;
   margin: 0 auto;
@@ -390,6 +396,6 @@ font-family: 'Tajawal', sans-serif;
 font-family: 'Tajawal', sans-serif;
 color:  #968256;
 }
-i {
+#alining i {
   color: #006770;
 }

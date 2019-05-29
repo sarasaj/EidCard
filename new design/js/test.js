@@ -243,7 +243,7 @@ function addTypo(img) {
 
  var rangeValue = function(){
    var newValue = elem.value;
-   var target = document.getElementsByClassName('.rangevalue');
+   var target = document.querySelector('.value');
    target.innerHTML = newValue;
  }
 
