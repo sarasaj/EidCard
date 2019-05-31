@@ -25,6 +25,10 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
   left: 0, top: 0 ,width:500,height:500,
   lockMovementX:true,
   lockMovementY:true,
+  selection : false,
+        controlsAboveOverlay:true,
+        centeredScaling:true,
+        allowTouchScrolling: true
  });
  canvas.add(img1).sendToBack();
  canvas.renderAll();
@@ -87,7 +91,11 @@ box = new fabric.IText('..اكتب إسمك هنا', {
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
-      textAlign: 'center'
+      textAlign: 'center',
+      selection : false,
+        controlsAboveOverlay:true,
+        centeredScaling:true,
+        allowTouchScrolling: true
 });
 canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
@@ -183,7 +191,10 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set( { left: 0, top: 0 ,width:500,height:500});
+        img.set( { left: 0, top: 0 ,width:500,height:500,selection : false,
+          controlsAboveOverlay:true,
+          centeredScaling:true,
+          allowTouchScrolling: true});
         img.crossOrigin = "Anonymous";
 
         var objs = canvas.getObjects();
