@@ -1,9 +1,9 @@
 
 var canvas = this.__canvas  = new fabric.Canvas('c', {
   preserveObjectStacking: true,
-  // selection : false,
-  // controlsAboveOverlay:true,
-  // centeredScaling:true,
+  selection : false,
+  controlsAboveOverlay:true,
+  centeredScaling:true,
   allowTouchScrolling: false
 });
 canvas.setHeight(500);
@@ -91,7 +91,8 @@ box = new fabric.IText('..اكتب إسمك هنا', {
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
-      textAlign: 'center'
+      textAlign: 'center',
+      controlsAboveOverlay: true
 });
 canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
