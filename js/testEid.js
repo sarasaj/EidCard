@@ -4,7 +4,7 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
   // selection : false,
   // controlsAboveOverlay:true,
   // centeredScaling:true,
-  allowTouchScrolling: true
+  allowTouchScrolling: false
 });
 canvas.setHeight(500);
 canvas.setWidth(500);
@@ -29,10 +29,6 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
   left: 0, top: 0 ,width:500,height:500,
   lockMovementX:true,
   lockMovementY:true,
-  selection : false,
-  controlsAboveOverlay:true,
-  centeredScaling:true,
-  allowTouchScrolling: true
  });
  canvas.add(img1).sendToBack();
  canvas.renderAll();
