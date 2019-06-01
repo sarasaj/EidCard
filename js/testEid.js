@@ -233,7 +233,6 @@ function changeIt(img) {
 current = 0;
 currentLogo = 0;
 currentimg = ""
-
 function addTypo(img) {
 
   if(current > 0){
@@ -246,36 +245,27 @@ function addTypo(img) {
     });
   }
 
-  var newImage = new fabric.Image(img, function(img) {
-    img.scale(0.5).set({
-      width: 341,
-      height: 341,
-      left:80,
-      top:100
+  var newImage = new fabric.Image(img, 
+    {
+        width: 341,
+        height: 341,
+        left:80,
+        top:100,
+        controlsAboveOverlay:true,
+        centeredScaling:true,
+        //allowTouchScrolling: true,
+        transparentCorners:false,
+        centeredRotation:true,
+        hasControls:true,
+        hasBorders:true,
+        hasRotatingPoint:true,
+        visible:true,
+        selectable:true,
+        evented:true
     });
-
-    // {
-    //     width: 341,
-    //     height: 341,
-    //     left:80,
-    //     top:100,
-    //     selection : true,
-    //     controlsAboveOverlay:true,
-    //     centeredScaling:true,
-    //     allowTouchScrolling: true,
-    //     transparentCorners:false,
-    //     centeredRotation:true,
-    //     hasControls:true,
-    //     hasBorders:true,
-    //     hasRotatingPoint:true,
-    //     visible:true,
-    //     selectable:true,
-    //     evented:true
-    // });
     canvas.add(newImage).setActiveObject(newImage);
-});
     current++;
-};
+}
 
  // range slider handlers
  var elem = document.querySelector('input[type="range"]');
