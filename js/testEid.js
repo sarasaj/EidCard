@@ -6,6 +6,7 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
   centeredScaling:true,
   allowTouchScrolling: false
 });
+fabric.isTouchSupported = 'maxTouchPoints' in navigator;
 canvas.setHeight(500);
 canvas.setWidth(500);
 // Define an array with all fonts
