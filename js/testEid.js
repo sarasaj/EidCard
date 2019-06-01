@@ -1,9 +1,9 @@
 var canvas = this.__canvas  = new fabric.Canvas('c', {
-  preserveObjectStacking: true,
+  preserveObjectStacking: true
   // selection : false,
   // controlsAboveOverlay:true,
   // centeredScaling:true,
-  allowTouchScrolling: true
+  // allowTouchScrolling: true
 });
 
 canvas.setHeight(500);
@@ -249,7 +249,19 @@ function addTypo(img) {
         width: 341,
         height: 341,
         left:80,
-        top:100
+        top:100,
+        selection : true,
+        controlsAboveOverlay:true,
+        centeredScaling:true,
+        allowTouchScrolling: true,
+        transparentCorners:false,
+        centeredRotation:true,
+        hasControls:true,
+        hasBorders:true,
+        hasRotatingPoint:true,
+        visible:true,
+        selectable:true,
+        evented:true
     });
     canvas.add(newImage).setActiveObject(newImage);
     current++;
