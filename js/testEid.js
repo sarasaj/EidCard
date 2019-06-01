@@ -1,9 +1,9 @@
 var canvas = this.__canvas  = new fabric.Canvas('c', {
   preserveObjectStacking: true,
-  selection : false,
-  controlsAboveOverlay:true,
-  centeredScaling:true,
-  allowTouchScrolling: false
+  // selection : false,
+  // controlsAboveOverlay:true,
+  // centeredScaling:true,
+  // allowTouchScrolling: false
 });
 
 canvas.setHeight(500);
@@ -274,10 +274,15 @@ function addTypo(img) {
    canvas.allowTouchScrolling = true;
  };
 
-//  canvas.on('object:moving', disableScroll);
-//  canvas.on('object:scaling', disableScroll);
-//  canvas.on('object:rotating', disableScroll);
-//  canvas.on('mouse:up', enableScroll);
+ canvas.on('object:moving', disableScroll);
+ canvas.on('object:scaling', disableScroll);
+ canvas.on('object:rotating', disableScroll);
+ canvas.on('object:rotating', disableScroll);
+ canvas.on({
+  'touch:gesture': disableScroll,
+  'touch:drag': disableScroll
+  },
+ canvas.on('mouse:up', enableScroll);
 
  document.getElementById('textInput').oninput = function() {
    //console.log("text:"+this.value);
