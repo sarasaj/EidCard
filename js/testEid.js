@@ -265,10 +265,10 @@ function addTypo(img) {
    canvas.allowTouchScrolling = true;
  };
 
- canvas.on('object:moving', disableScroll);
- canvas.on('object:scaling', disableScroll);
- canvas.on('object:rotating', disableScroll);
- canvas.on('mouse:up', enableScroll);
+//  canvas.on('object:moving', disableScroll);
+//  canvas.on('object:scaling', disableScroll);
+//  canvas.on('object:rotating', disableScroll);
+//  canvas.on('mouse:up', enableScroll);
 
  document.getElementById('textInput').oninput = function() {
    //console.log("text:"+this.value);
