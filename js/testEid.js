@@ -295,7 +295,10 @@ function addTypo(img) {
   'touch:drag': enableScroll
   });
  canvas.on('mouse:up', enableScroll);
-
+ canvas.on('mouse:move',function(option){
+  var pointer = canvas.getPointer(option.e);
+  ;
+ })
  document.getElementById('textInput').oninput = function() {
    //console.log("text:"+this.value);
      box.set({text: this.value});
