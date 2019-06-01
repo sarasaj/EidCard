@@ -95,11 +95,7 @@ box = new fabric.IText('..اكتب إسمك هنا', {
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
-      textAlign: 'center',
-      selection : false,
-        controlsAboveOverlay:true,
-        centeredScaling:true,
-        allowTouchScrolling: true
+      textAlign: 'center'
 });
 canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
@@ -195,7 +191,7 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set( { left: 0, top: 0 ,width:500,height:500,selection : false,
+        img.set( { left: 0, top: 0 ,width:500,height:500,selection : true,
           controlsAboveOverlay:true,
           centeredScaling:true,
           allowTouchScrolling: true});
