@@ -281,7 +281,7 @@ function addTypo(img) {
  canvas.on({
   'touch:gesture': disableScroll,
   'touch:drag': disableScroll
-  },
+  });
  canvas.on('mouse:up', enableScroll);
 
  document.getElementById('textInput').oninput = function() {
