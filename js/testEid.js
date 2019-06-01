@@ -1,9 +1,9 @@
 
 var canvas = this.__canvas  = new fabric.Canvas('c', {
   preserveObjectStacking: true,
-  selection : false,
-  controlsAboveOverlay:true,
-  centeredScaling:true,
+  // selection : false,
+  // controlsAboveOverlay:true,
+  // centeredScaling:true,
   allowTouchScrolling: true
 });
 canvas.setHeight(500);
