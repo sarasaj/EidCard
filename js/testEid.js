@@ -291,8 +291,8 @@ function addTypo(img) {
  canvas.on('object:rotating', disableScroll);
  canvas.on('object:rotating', disableScroll);
  canvas.on({
-  'touch:gesture': disableScroll,
-  'touch:drag': disableScroll
+  'touch:gesture': enableScroll,
+  'touch:drag': enableScroll
   });
  canvas.on('mouse:up', enableScroll);
 
