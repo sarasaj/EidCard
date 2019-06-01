@@ -3,7 +3,7 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
   // selection : false,
   // controlsAboveOverlay:true,
   // centeredScaling:true,
-  // allowTouchScrolling: false
+  allowTouchScrolling: true
 });
 
 canvas.setHeight(500);
