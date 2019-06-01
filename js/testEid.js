@@ -245,24 +245,31 @@ function addTypo(img) {
     });
   }
 
-  var newImage = new fabric.Image(img, {
-        width: 341,
-        height: 341,
-        left:80,
-        top:100,
-        selection : true,
-        controlsAboveOverlay:true,
-        centeredScaling:true,
-        allowTouchScrolling: true,
-        transparentCorners:false,
-        centeredRotation:true,
-        hasControls:true,
-        hasBorders:true,
-        hasRotatingPoint:true,
-        visible:true,
-        selectable:true,
-        evented:true
+  var newImage = new fabric.Image(img, function(img) {
+    img.scale(0.5).set({
+      width: 341,
+      height: 341,
+      left:80,
+      top:100
     });
+    // {
+    //     width: 341,
+    //     height: 341,
+    //     left:80,
+    //     top:100,
+    //     selection : true,
+    //     controlsAboveOverlay:true,
+    //     centeredScaling:true,
+    //     allowTouchScrolling: true,
+    //     transparentCorners:false,
+    //     centeredRotation:true,
+    //     hasControls:true,
+    //     hasBorders:true,
+    //     hasRotatingPoint:true,
+    //     visible:true,
+    //     selectable:true,
+    //     evented:true
+    // });
     canvas.add(newImage).setActiveObject(newImage);
     current++;
 }
