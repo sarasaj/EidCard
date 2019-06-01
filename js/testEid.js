@@ -253,7 +253,7 @@ function addTypo(img) {
       left:80,
       top:100
     });
-  });
+
     // {
     //     width: 341,
     //     height: 341,
@@ -273,6 +273,7 @@ function addTypo(img) {
     //     evented:true
     // });
     canvas.add(newImage).setActiveObject(newImage);
+});
     current++;
 };
 
