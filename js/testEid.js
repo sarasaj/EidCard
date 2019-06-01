@@ -298,7 +298,8 @@ function addTypo(img) {
  canvas.on('mouse:move',function(option){
   var pointer = canvas.getPointer(option.e);
   ;
- })
+ });
+ alert('fabric.isTouchSupported=' + fabric.isTouchSupported)
  document.getElementById('textInput').oninput = function() {
    //console.log("text:"+this.value);
      box.set({text: this.value});
