@@ -233,6 +233,7 @@ function changeIt(img) {
 current = 0;
 currentLogo = 0;
 currentimg = ""
+
 function addTypo(img) {
 
   if(current > 0){
