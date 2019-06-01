@@ -196,7 +196,16 @@ function addImage(imgLink) {
         img.set( { left: 0, top: 0 ,width:500,height:500,selection : true,
           controlsAboveOverlay:true,
           centeredScaling:true,
-          allowTouchScrolling: true});
+          allowTouchScrolling: true,
+          transparentCorners:false,
+          centeredRotation:true,
+          hasControls:true,
+          hasBorders:true,
+          hasRotatingPoint:true,
+          visible:true,
+          selectable:true,
+          evented:true
+        });
         img.crossOrigin = "Anonymous";
 
         var objs = canvas.getObjects();
