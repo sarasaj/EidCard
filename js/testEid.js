@@ -253,6 +253,7 @@ function addTypo(img) {
       left:80,
       top:100
     });
+  });
     // {
     //     width: 341,
     //     height: 341,
@@ -273,7 +274,7 @@ function addTypo(img) {
     // });
     canvas.add(newImage).setActiveObject(newImage);
     current++;
-}
+};
 
  // range slider handlers
  var elem = document.querySelector('input[type="range"]');
