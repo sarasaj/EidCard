@@ -374,6 +374,18 @@ function openTab(evt,name){
 
 }
 
+resizeCanvas = function() {
+  var winW = $(window).width(),
+      winH = $(window).height(),
+      curW = canvas.getWidth(),
+      curH = canvas.getHeight(),
+      canW = winW - 75,
+      canH = winH - 60;
 
+  canvas.setWidth(canW);
+  canvas.setHeight(canH);
+  canvas.renderAll();
+};
 
-//2m6kgFzZk3d9dCB
+//Resize board
+$(window).resize(resizeCanvas);
