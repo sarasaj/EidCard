@@ -203,18 +203,18 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set( { left: 0, top: 0 ,width:500,height:500,selection : true,
-          controlsAboveOverlay:true,
-          centeredScaling:true,
-          allowTouchScrolling: true,
-          transparentCorners:false,
-          centeredRotation:true,
-          hasControls:true,
-          hasBorders:true,
-          hasRotatingPoint:true,
-          visible:true,
-          selectable:true,
-          evented:true
+        img.set( { left: 0, top: 0 ,width:canW,height:canH,
+          // controlsAboveOverlay:true,
+          // centeredScaling:true,
+          // allowTouchScrolling: true,
+          // transparentCorners:false,
+          // centeredRotation:true,
+          // hasControls:true,
+          // hasBorders:true,
+          // hasRotatingPoint:true,
+          // visible:true,
+          // selectable:true,
+          // evented:true
         });
         img.crossOrigin = "Anonymous";
 
