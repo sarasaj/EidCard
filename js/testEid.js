@@ -10,13 +10,13 @@ var winW = $(window).width(),
     canW = winW - 75,
     canH = canW;
 
-    if(canW>500px) {
+    if(canW>500) {
       canW=500;
       canH=500;
     }
 canvas.setWidth(canW);
 canvas.setHeight(canH);
-console.log("height:"+canH?" width:"+canW);
+console.log("height:"+canH+" width:"+canW);
 canvas.renderAll();
 // canvas.setHeight(500);
 // canvas.setWidth(500);
