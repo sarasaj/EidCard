@@ -36,7 +36,7 @@ for (var i = 1; i <= 16; i++) {
   $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="./eid designs/backgrounds/'+i+'.jpg" />');
 }
 
-fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
+fabric.Image.fromURL('./eid designs/backgrounds/9.jpg', function(myImg) {
  var img1 = myImg.set({
   left: 0, top: 0 ,
   width:500,
