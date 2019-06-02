@@ -251,17 +251,17 @@ function addTypo(img) {
         height: 341,
         left:80,
         top:100,
-        controlsAboveOverlay:true,
-        centeredScaling:true,
+        // controlsAboveOverlay:true,
+        // centeredScaling:true,
         //allowTouchScrolling: true,
-        transparentCorners:false,
-        centeredRotation:true,
-        hasControls:true,
-        hasBorders:true,
-        hasRotatingPoint:true,
-        visible:true,
-        selectable:true,
-        evented:true
+        // transparentCorners:false,
+        // centeredRotation:true,
+        // hasControls:true,
+        // hasBorders:true,
+        // hasRotatingPoint:true,
+        // visible:true,
+        // selectable:true,
+        // evented:true
     });
     canvas.add(newImage).setActiveObject(newImage);
     current++;
@@ -290,15 +290,14 @@ function addTypo(img) {
  canvas.on('object:scaling', disableScroll);
  canvas.on('object:rotating', disableScroll);
  canvas.on('object:rotating', disableScroll);
- canvas.on({
-  'touch:gesture': enableScroll,
-  'touch:drag': enableScroll
-  });
+//  canvas.on({
+//   'touch:gesture': enableScroll,
+//   'touch:drag': enableScroll
+//   });
  canvas.on('mouse:up', enableScroll);
  canvas.on('mouse:move',function(option){
-  var pointer = canvas.getPointer(option.e);
-  ;
- });
+//   var pointer = canvas.getPointer(option.e);
+//  });
  //alert('fabric.isTouchSupported=' + fabric.isTouchSupported)
  document.getElementById('textInput').oninput = function() {
    //console.log("text:"+this.value);
