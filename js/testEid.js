@@ -5,9 +5,16 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
   // centeredScaling:true,
   // allowTouchScrolling: true
 });
+var winW = $(window).width(),
+    winH = $(window).height(),
+    canW = winW - 75,
+    canH = winH - 60;
 
-canvas.setHeight(500);
-canvas.setWidth(500);
+canvas.setWidth(canW);
+canvas.setHeight(canH);
+canvas.renderAll();
+// canvas.setHeight(500);
+// canvas.setWidth(500);
 // Define an array with all fonts
 var fonts = ["Changa", "El Messiri", "Lalezar", "Lemonada" , "Amiri" , "Cairo" , "Pacifico" , "Tajawal"];
 //text align
@@ -367,15 +374,15 @@ function openTab(evt,name){
 
 }
 
-window.addEventListener('resize', function(event){
-  var winW = $(window).width(),
-      winH = $(window).height(),
-      curW = canvas.getWidth(),
-      curH = canvas.getHeight(),
-      canW = winW - 75,
-      canH = winH - 60;
+// window.addEventListener('resize', function(event){
+//   var winW = $(window).width(),
+//       winH = $(window).height(),
+//       curW = canvas.getWidth(),
+//       curH = canvas.getHeight(),
+//       canW = winW - 75,
+//       canH = winH - 60;
 
-  canvas.setWidth(canW);
-  canvas.setHeight(canH);
-  canvas.renderAll();
-});
+//   canvas.setWidth(canW);
+//   canvas.setHeight(canH);
+//   canvas.renderAll();
+// });
