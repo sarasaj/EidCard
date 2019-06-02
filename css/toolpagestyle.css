@@ -27,14 +27,14 @@
     margin-bottom: 0;
     width: 100vw;
   }  
-  .canvas-container canvas {
+  /* .canvas-container canvas {
        width: 350px !important;
        height: auto !important;
     }
     #canvas-container{
       width: auto !important;
       height: 370px !important;
-    }
+    } */
 		.tab-links a {
   			font-size: 0.85em !important;
   	}
@@ -108,7 +108,7 @@
     margin-top: 1em;
     opacity: 0.7;
   }  
-  .canvas-container canvas {
+  /* .canvas-container canvas {
        width: 390px !important;
        height: auto !important;
        position: relative !important;
@@ -116,7 +116,7 @@
     .canvas-container {
        width: auto !important;
        height: 410px !important;
-    }
+    } */
     #uniLogo {
       margin-top: 1em;
       width: 12em;
