@@ -17,7 +17,7 @@ var winW = $(window).width(),
 canvas.setWidth(canW);
 canvas.setHeight(canH);
 canvas.calcOffset();
-console.log("canW height:"+canH+" winW:"+winW);
+console.log("canW :"+canH+" winW:"+winW);
 canvas.renderAll();
 
 // Define an array with all fonts
