@@ -214,7 +214,7 @@ function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
       var image =  img.set( { 
           left: 0, 
-          top: 0 ,
+          top: 0,
           width:500,
           height:500
         });
