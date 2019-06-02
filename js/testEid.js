@@ -205,6 +205,8 @@ function deleteObj(){
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
         img.set( { left: 0, top: 0 ,width:canW,height:canH,
+          scaleX: canvas.width / img.width,
+          scaleY: canvas.height / img.height
           // controlsAboveOverlay:true,
           // centeredScaling:true,
           // allowTouchScrolling: true,
@@ -218,7 +220,7 @@ function addImage(imgLink) {
           // evented:true
         });
         img.crossOrigin = "Anonymous";
-
+console.log("scale factor:"+scaleX);
         var objs = canvas.getObjects();
         if (objs.length) {
             objs.forEach(function(e) {
@@ -249,6 +251,7 @@ function changeIt(img) {
 current = 0;
 currentLogo = 0;
 currentimg = ""
+// add typography
 function addTypo(img) {
 
   if(current > 0){
