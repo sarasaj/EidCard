@@ -41,8 +41,6 @@ fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
   left: 0, top: 0 ,
   width:500,
   height:500,  
-  // scaleX: canvas.width / img.width,
-  // scaleY: canvas.height / img.height,
   lockMovementX:true,
   lockMovementY:true,
   lockUniScaling:true,
@@ -51,6 +49,7 @@ fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
   
 
  });
+ img.scaleToWidth(service.canvas.getWidth());
  canvas.add(img1).sendToBack();
  canvas.renderAll();
 },{crossOrigin:'Anonymous'});
@@ -215,10 +214,9 @@ function addImage(imgLink) {
           top: 0 ,
           width:500,
           height:500,
-          scaleX: canvas.width / img.width,
-          scaleY: canvas.height / img.height
         });
-        console.log("scale factor:"+canvas.width / img.width);
+        img.scaleToWidth(service.canvas.getWidth());
+        console.log("scale 1");
         img.crossOrigin = "Anonymous";
         var objs = canvas.getObjects();
         if (objs.length) {
