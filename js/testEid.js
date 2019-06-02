@@ -16,6 +16,7 @@ var winW = $(window).width(),
     }
 canvas.setWidth(canW);
 canvas.setHeight(canH);
+canvas.calcOffset();
 console.log("height:"+canH+" width:"+canW);
 canvas.renderAll();
 // canvas.setHeight(500);
