@@ -217,7 +217,7 @@ function addImage(imgLink) {
           width:500,
           height:500
         });
-        image.scaleToWidth(canw);
+        image.scaleToWidth(canW);
         image.scaleToHeight(canH);
         console.log("scale 1");
         var objs = canvas.getObjects();
