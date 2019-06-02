@@ -17,10 +17,9 @@ var winW = $(window).width(),
 canvas.setWidth(canW);
 canvas.setHeight(canH);
 canvas.calcOffset();
-console.log("height:"+canH+" width:"+canW);
+console.log("canvas.calcOffset(); height:"+canH+" width:"+canW);
 canvas.renderAll();
-// canvas.setHeight(500);
-// canvas.setWidth(500);
+
 // Define an array with all fonts
 var fonts = ["Changa", "El Messiri", "Lalezar", "Lemonada" , "Amiri" , "Cairo" , "Pacifico" , "Tajawal"];
 //text align
@@ -39,7 +38,7 @@ for (var i = 1; i <= 16; i++) {
 
 fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
  var img1 = myImg.set({
-  left: 0, top: 0 ,width:500,height:500,
+  left: 0, top: 0 ,width:canW,height:canH,
   lockMovementX:true,
   lockMovementY:true,
   lockUniScaling:true,
