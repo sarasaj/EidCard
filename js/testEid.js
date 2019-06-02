@@ -39,8 +39,10 @@ for (var i = 1; i <= 16; i++) {
 fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
  var img1 = myImg.set({
   left: 0, top: 0 ,
-  scaleX: canvas.width / img.width,
-  scaleY: canvas.height / img.height,
+  width:500,
+  height:500,  
+  // scaleX: canvas.width / img.width,
+  // scaleY: canvas.height / img.height,
   lockMovementX:true,
   lockMovementY:true,
   lockUniScaling:true,
@@ -211,13 +213,12 @@ function addImage(imgLink) {
         img.set( { 
           left: 0, 
           top: 0 ,
-          width:canW,
-          height:canH,
+          width:500,
+          height:500,
           scaleX: canvas.width / img.width,
           scaleY: canvas.height / img.height
-
         });
-        console.log("scale factor:"+scaleX);
+        console.log("scale factor:"+canvas.width / img.width);
         img.crossOrigin = "Anonymous";
         var objs = canvas.getObjects();
         if (objs.length) {
