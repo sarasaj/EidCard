@@ -374,7 +374,7 @@ function openTab(evt,name){
 
 }
 
-resizeCanvas = function() {
+window.addEventListener('resize', function(event){
   var winW = $(window).width(),
       winH = $(window).height(),
       curW = canvas.getWidth(),
@@ -385,7 +385,4 @@ resizeCanvas = function() {
   canvas.setWidth(canW);
   canvas.setHeight(canH);
   canvas.renderAll();
-};
-
-//Resize board
-$(window).resize(resizeCanvas);
+});
