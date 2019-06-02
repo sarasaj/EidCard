@@ -17,7 +17,7 @@ var winW = $(window).width(),
 canvas.setWidth(canW);
 canvas.setHeight(canH);
 canvas.calcOffset();
-console.log("canW height:"+canH+" width:"+canW);
+console.log("canW height:"+canH+" winW:"+winW);
 canvas.renderAll();
 
 // Define an array with all fonts
@@ -101,14 +101,15 @@ fonts.forEach(function(font) {
 //editing tools
 function Addtext() {
 box = new fabric.IText('..اكتب إسمك هنا', {
-      left: 150,
-      top: 400,
+      left: canH/(3.3),
+      top: canH/(1.25),
       fontFamily: 'arial black',
       fill: '#ffffff',
       fontSize: 30,
       textAlign: 'center',
       controlsAboveOverlay: true
 });
+console.log("position:"+canH/(1.25)+"left "+canH/(3.3));
 canvas.add(box).setActiveObject(box);
 console.log(canvas.getActiveObject());
 }
