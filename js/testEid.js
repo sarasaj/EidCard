@@ -49,9 +49,9 @@ fabric.Image.fromURL('./eid designs/backgrounds/9.jpg', function(myImg) {
   
 
  });
-//  img.scaleToWidth(canvas.getWidth());
-//  img.scaleToHeight(canvas.getHeight());
- console.log("in set bg image")
+ img1.scaleToWidth(canW);
+ img1.scaleToHeight(canH);
+ console.log("in set bg image 1")
  canvas.add(img1).sendToBack();
  canvas.renderAll();
 },{crossOrigin:'Anonymous'});
