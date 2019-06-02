@@ -217,9 +217,9 @@ function addImage(imgLink) {
           width:500,
           height:500,
         });
-        img.scaleToWidth(canvas.getWidth());
-        img.scaleToHeight(canvas.getheight());
-        console.log("scale 1");
+        // img.scaleToWidth(canvas.getWidth());
+        // img.scaleToHeight(canvas.getheight());
+        // console.log("scale 1");
         img.crossOrigin = "Anonymous";
         var objs = canvas.getObjects();
         if (objs.length) {
