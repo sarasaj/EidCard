@@ -8,10 +8,15 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
 var winW = $(window).width(),
     winH = $(window).height(),
     canW = winW - 75,
-    canH = winH - 60;
+    canH = canW;
 
+    if(canW>500px) {
+      canW=500;
+      canH=500;
+    }
 canvas.setWidth(canW);
 canvas.setHeight(canH);
+console.log("height:"+canH?" width:"+canW);
 canvas.renderAll();
 // canvas.setHeight(500);
 // canvas.setWidth(500);
