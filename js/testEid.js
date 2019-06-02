@@ -210,6 +210,7 @@ function deleteObj(){
 }
 
 function addImage(imgLink) {
+  console.log("imgLink:2"+imgLink);
     fabric.Image.fromURL(imgLink, function(img) {
       var image =  img.set( { 
           left: 0, 
@@ -219,7 +220,7 @@ function addImage(imgLink) {
         });
         image.scaleToWidth(canW);
         image.scaleToHeight(canH);
-        console.log("scale 1");
+        console.log("scale 2");
         var objs = canvas.getObjects();
         if (objs.length) {
             objs.forEach(function(e) {
