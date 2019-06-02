@@ -36,16 +36,17 @@ for (var i = 1; i <= 16; i++) {
   $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="./eid designs/backgrounds/'+i+'.jpg" />');
 }
 
-fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
+fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
  var img1 = myImg.set({
-  left: 0, top: 0 ,width:canW,height:canH,
+  left: 0, top: 0 ,
+  scaleX: canvas.width / img.width,
+  scaleY: canvas.height / img.height,
   lockMovementX:true,
   lockMovementY:true,
   lockUniScaling:true,
   lockRotation:true,
   hasControls:false,
-  scaleX: canvas.width / img.width,
-  scaleY: canvas.height / img.height
+  
 
  });
  canvas.add(img1).sendToBack();
