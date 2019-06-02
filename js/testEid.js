@@ -7,7 +7,7 @@ var canvas = this.__canvas  = new fabric.Canvas('c', {
 });
 var winW = $(window).width(),
     winH = $(window).height(),
-    canW = winW - 75,
+    canW = winW - 60,
     canH = canW;
 
     if(canW>500) {
