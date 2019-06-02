@@ -29,11 +29,11 @@ var el = document.getElementById('res');
 var select = document.getElementById("font-family");
 //append typography to images div for drag and drop
 for (var i = 1; i <= 25; i++) {
-  $('#images').append('<img src="ramadan design/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
+  $('#images').append('<img src="./eid designs/25 typography/MKH_'+i+'-01.png" class="typo img-responsive" onclick="addTypo(this)"></img>');
 }
 //append bg images
 for (var i = 1; i <= 16; i++) {
-  $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="ramadan design/backgrounds/'+i+'.jpg" />');
+  $('#backgrounds').append('<img onclick="changeIt(this)" class="bg img-responsive" src="./eid designs/backgrounds/'+i+'.jpg" />');
 }
 
 fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
@@ -84,7 +84,7 @@ function loadAndUse(font) {
       active.set("fontFamily", font);
       canvas.requestRenderAll();
       active.bringToFront();
-      console.log("font added");
+      //console.log("font added");
     }).catch(function(e) {
       console.log(e)
           });
@@ -204,23 +204,17 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set( { left: 0, top: 0 ,width:canW,height:canH,
+        img.set( { 
+          left: 0, 
+          top: 0 ,
+          width:canW,
+          height:canH,
           scaleX: canvas.width / img.width,
           scaleY: canvas.height / img.height
-          // controlsAboveOverlay:true,
-          // centeredScaling:true,
-          // allowTouchScrolling: true,
-          // transparentCorners:false,
-          // centeredRotation:true,
-          // hasControls:true,
-          // hasBorders:true,
-          // hasRotatingPoint:true,
-          // visible:true,
-          // selectable:true,
-          // evented:true
+
         });
+        console.log("scale factor:"+scaleX);
         img.crossOrigin = "Anonymous";
-console.log("scale factor:"+scaleX);
         var objs = canvas.getObjects();
         if (objs.length) {
             objs.forEach(function(e) {
