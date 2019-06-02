@@ -30,7 +30,8 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
   lockMovementX:true,
   lockMovementY:true,
   lockUniScaling:true,
-  lockRotation:true
+  lockRotation:true,
+  hasControls:false
  });
  canvas.add(img1).sendToBack();
  canvas.renderAll();
@@ -253,17 +254,7 @@ function addTypo(img) {
         height: 341,
         left:80,
         top:100,
-        // controlsAboveOverlay:true,
-        // centeredScaling:true,
-        //allowTouchScrolling: true,
-        // transparentCorners:false,
-        // centeredRotation:true,
-        // hasControls:true,
-        // hasBorders:true,
-        // hasRotatingPoint:true,
-        // visible:true,
-        // selectable:true,
-        // evented:true
+
     });
     canvas.add(newImage).setActiveObject(newImage);
     current++;
