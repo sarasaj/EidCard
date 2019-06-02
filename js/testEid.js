@@ -211,16 +211,15 @@ function deleteObj(){
 
 function addImage(imgLink) {
     fabric.Image.fromURL(imgLink, function(img) {
-        img.set( { 
+      var image =  img.set( { 
           left: 0, 
           top: 0 ,
           width:500,
-          height:500,
+          height:500
         });
-        // img.scaleToWidth(canvas.getWidth());
-        // img.scaleToHeight(canvas.getheight());
-        // console.log("scale 1");
-        img.crossOrigin = "Anonymous";
+        image.scaleToWidth(canvas.getWidth());
+        image.scaleToHeight(canvas.getheight());
+        console.log("scale 1");
         var objs = canvas.getObjects();
         if (objs.length) {
             objs.forEach(function(e) {
