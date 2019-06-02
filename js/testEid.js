@@ -50,6 +50,7 @@ fabric.Image.fromURL('./eid designs/backgrounds/12.jpg', function(myImg) {
 
  });
  img.scaleToWidth(service.canvas.getWidth());
+ img.scaleToHeight(service.canvas.getHeight());
  canvas.add(img1).sendToBack();
  canvas.renderAll();
 },{crossOrigin:'Anonymous'});
