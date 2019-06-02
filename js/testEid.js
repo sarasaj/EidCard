@@ -43,7 +43,10 @@ fabric.Image.fromURL('eid designs/backgrounds/12.jpg', function(myImg) {
   lockMovementY:true,
   lockUniScaling:true,
   lockRotation:true,
-  hasControls:false
+  hasControls:false,
+  scaleX: canvas.width / img.width,
+  scaleY: canvas.height / img.height
+
  });
  canvas.add(img1).sendToBack();
  canvas.renderAll();
