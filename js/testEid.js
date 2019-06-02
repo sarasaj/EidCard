@@ -295,7 +295,7 @@ function addTypo(img) {
 //   'touch:drag': enableScroll
 //   });
  canvas.on('mouse:up', enableScroll);
- canvas.on('mouse:move',function(option){
+//  canvas.on('mouse:move',function(option){
 //   var pointer = canvas.getPointer(option.e);
 //  });
  //alert('fabric.isTouchSupported=' + fabric.isTouchSupported)
